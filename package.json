@@ -1,0 +1,15 @@
+{
+  "name": "blackpink-fan-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bbumjun/BLACKPINK-fan-page.git",
+  "author": "bbumjun <bumjun7928@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {}
+}
