@@ -42,7 +42,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './html/index.html',
-            filename: './[name].html'
+            filename: './index.html',
+            chunks: ['index']
         }),
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
@@ -50,7 +51,7 @@ module.exports = {
     ],
     devServer: {
         port:3000,
-        contentBase: path.join(__dirname,'dist'),
+        contentBase: './dist',
         publicPath:'/',
         open:true
     },
