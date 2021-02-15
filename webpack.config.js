@@ -8,10 +8,12 @@ module.exports = {
         index : './js/index.js'
 },
     output : {
-        filename : '[name].bundle.js',
-        path: path.resolve(__dirname,'./dist')
+        filename : '[name].[contenthash:5].js',
+        path: path.resolve(__dirname,'./dist'),
+        publicPath:'./'
     },
-    mode: 'production',
+
+    mode: 'none',
     module : {
         rules: [
             {
@@ -19,11 +21,14 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader,'css-loader']
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                use:['file-loader']
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                loader: 'file-loader',
+                options : {
+                    name:"[path][name].[ext]?[contenthash]"
+                }
             },
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
@@ -36,10 +41,17 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './html/index.html'
+            template: './html/index.html',
+            filename: './[name].html'
         }),
         new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({filename: '[name].css'})
-    ]
+    ],
+    devServer: {
+        port:3000,
+        contentBase: path.join(__dirname,'dist'),
+        publicPath:'/',
+        open:true
+    },
 }
