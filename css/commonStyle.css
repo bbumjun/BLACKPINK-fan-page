@@ -1,45 +1,112 @@
-body {
+body{
     margin: 0;
     padding: 0;
-    min-height:100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* header */
 .header {
-    padding : 1rem;
-    display: flex;
-    justify-content: space-between;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  visibility: hidden;
 }
-.header__logo img{
-    width:10rem;
+.header--loaded {
+  visibility: visible;
 }
+
+.header__logo img {
+  width: 10rem;
+}
+
 .header__menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 3rem;
-    border-radius: 100%;
-    background-color:rgb(248, 152, 168) ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 2.2rem;
+  width: 2.2rem;
+  padding: 0.5rem;
+  border-radius: 100%;
+  transition: transform 0.3s ease;
 }
+
+.header__menu-icon:hover {
+  cursor: pointer;
+}
+
+.header__menu-icon--toggle {
+  transform: rotate(90deg);
+}
+
 .header__menu-icon__bar {
-    width: 1.4rem;
-    height: 0.3rem;
+  width: 1.7rem;
+  height: 0.4rem;
+  background-color: white;
+  margin: auto;
+  border-radius: 30%;
+}
+/* loader */
+.loader {
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.loader--active {
+  visibility: visible;
+}
+.loader__dots{
+    width:1rem;
+    height:1rem;
     background-color: black;
-    margin: 0.1rem 1rem;
-    border-radius: 30%;
+    margin: 1rem;
+    border-radius: 100%;
+    animation: bounce 0.5s infinite alternate;
+    transition: all ease-in-out;
+}
+@keyframes bounce {
+  to{
+    transform: translate(0,-300%);
+  }
+}
+.loader .loader__dots:nth-child(2){
+  animation-delay: 0.16s;
+}
+.loader .loader__dots:nth-child(3){
+  animation-delay: 0.33s;
+}
+
+/* content */
+.content {
+  flex:1;
+}
+/* footer */
+.footer {
+  visibility: hidden;
+}
+.footer--loaded {
+  visibility: visible;
 }
 .footer__sns-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
+
 .footer__sns-list li {
-    display: inline;
-    margin: 0.5rem;
+  display: inline;
+  margin: 0.5rem;
 }
+
 .footer__sns-list li img {
-    width: 1.5rem;
+  width: 1.5rem;
+  border-radius: 30%;
 }
