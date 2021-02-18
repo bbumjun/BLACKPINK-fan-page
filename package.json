@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve",
+    "eslint" : "eslint . --fix",
     "stylelint" : "stylelint \"**/*.css\" --fix"
   },
   "devDependencies": {

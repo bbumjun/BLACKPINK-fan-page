@@ -19,26 +19,26 @@ var indexImages = __webpack_require__(10);
 
 var backgroundImages = __webpack_require__(11);
 
-window.addEventListener('load', function () {
-  var header = document.querySelector('header');
-  var footer = document.querySelector('footer');
-  header.classList.add('header--loaded');
-  footer.classList.add('footer--loaded');
+window.addEventListener("load", function () {
+  var header = document.querySelector("header");
+  var footer = document.querySelector("footer");
+  header.classList.add("header--loaded");
+  footer.classList.add("footer--loaded");
 
   var changeBackground = function changeBackground() {
-    var background = document.querySelector('.background');
-    var bgUrlList = document.querySelectorAll('.url-list > li');
+    var background = document.querySelector(".background");
+    var bgUrlList = document.querySelectorAll(".url-list > li");
     var bgUrls = Array.from(bgUrlList).map(function (bg) {
       return bg.dataset.url;
     });
     var idx = 1;
     bgUrlList.forEach(function (bg) {
-      return bg.style.setProperty('background', "url(".concat(bg.dataset.url, ")"));
+      return bg.style.setProperty("background", "url(".concat(bg.dataset.url, ")"));
     });
     return function () {
       console.log(idx);
-      background.style.setProperty('background', "url(".concat(bgUrls[idx++ % bgUrls.length], ")"));
-      background.style.setProperty('background-size', 'cover');
+      background.style.setProperty("background", "url(".concat(bgUrls[idx++ % bgUrls.length], ")"));
+      background.style.setProperty("background-size", "cover");
     };
   };
 
@@ -67,9 +67,9 @@ __webpack_require__.r(__webpack_exports__);
 /* 3 */
 /***/ (() => {
 
-var menuBtn = document.querySelector('.header__menu-icon');
-menuBtn.addEventListener('click', function () {
-  menuBtn.classList.toggle('header__menu-icon--toggle');
+var menuBtn = document.querySelector(".header__menu-icon");
+menuBtn.addEventListener("click", function () {
+  menuBtn.classList.toggle("header__menu-icon--toggle");
 });
 
 /***/ }),

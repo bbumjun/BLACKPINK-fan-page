@@ -1,7 +1,8 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -16,6 +17,7 @@ body{
   justify-content: space-between;
   visibility: hidden;
 }
+
 .header--loaded {
   visibility: visible;
 }
@@ -45,54 +47,63 @@ body{
 
 .header__menu-icon__bar {
   width: 1.7rem;
-  height: 0.4rem;
+  height: 0.3rem;
   background-color: white;
   margin: auto;
-  border-radius: 30%;
+  border-radius: 20%;
 }
+
 /* loader */
 .loader {
-    display: flex;
-    flex:1;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
 }
+
 .loader--active {
   visibility: visible;
 }
-.loader__dots{
-    width:1rem;
-    height:1rem;
-    background-color: black;
-    margin: 1rem;
-    border-radius: 100%;
-    animation: bounce 0.5s infinite alternate;
-    transition: all ease-in-out;
+
+.loader__dots {
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  margin: 1rem;
+  border-radius: 100%;
+  animation: bounce 0.5s infinite alternate;
+  transition: all ease-in-out;
 }
+
 @keyframes bounce {
-  to{
-    transform: translate(0,-300%);
+  to {
+    transform: translate(0, -300%);
   }
 }
-.loader .loader__dots:nth-child(2){
+
+.loader .loader__dots:nth-child(2) {
   animation-delay: 0.16s;
 }
-.loader .loader__dots:nth-child(3){
+
+.loader .loader__dots:nth-child(3) {
   animation-delay: 0.33s;
 }
 
 /* content */
 .content {
-  flex:1;
+  flex: 1;
 }
+
 /* footer */
 .footer {
   visibility: hidden;
 }
+
 .footer--loaded {
   visibility: visible;
 }
+
 .footer__sns-list {
   list-style-type: none;
   margin: 0;
@@ -112,16 +123,16 @@ body{
 }
 
 .background {
-    background: url(./img/background-img/image1.jpg?d94ca4d253733b4b1da1cd1fc13ef82e);
-    background-size: 100%;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index:-1;
-    transition: background-image 2s;
+  background: url(./img/background-img/image1.jpg?d94ca4d253733b4b1da1cd1fc13ef82e);
+  background-size: 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: background-image 2s;
 }
-
 
 .url-list {
-    visibility: hidden;
+  visibility: hidden;
 }
+
