@@ -9,24 +9,14 @@ module.exports = {
   },
   output: {
     filename: "[name].[contenthash:5].js",
-    path: path.resolve(__dirname, "./dist"),
+    path:path.resolve(__dirname,'dist'),
     publicPath: "./",
   },
-
+  
   mode: "none",
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[path][name].[ext]?[contenthash]",
-        },
-      },
+      
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -36,6 +26,25 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
+      }, 
+      {
+        test:/\.(ttf|woff)$/,
+        loader: "url-loader",
+        options: {
+          name:"[path][name].[ext]",
+          limit:20000,
+        }
       },
     ],
   },
@@ -51,8 +60,10 @@ module.exports = {
   ],
   devServer: {
     port: 3000,
-    contentBase: "./dist",
-    publicPath: "/",
-    open: true,
+    contentBase : './dist/',
+    publicPath : '/',
+    open:true,
+    host: '0.0.0.0',
+    disableHostCheck: true
   },
 };
