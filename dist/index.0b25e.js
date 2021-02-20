@@ -15,35 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var defaultImgages = __webpack_require__(4);
 
-var indexImages = __webpack_require__(10);
-
-var backgroundImages = __webpack_require__(11);
-
-window.addEventListener("load", function () {
-  var header = document.querySelector("header");
-  var footer = document.querySelector("footer");
-  header.classList.add("header--loaded");
-  footer.classList.add("footer--loaded");
-
-  var changeBackground = function changeBackground() {
-    var background = document.querySelector(".background");
-    var bgUrlList = document.querySelectorAll(".url-list > li");
-    var bgUrls = Array.from(bgUrlList).map(function (bg) {
-      return bg.dataset.url;
-    });
-    var idx = 1;
-    bgUrlList.forEach(function (bg) {
-      return bg.style.setProperty("background", "url(".concat(bg.dataset.url, ")"));
-    });
-    return function () {
-      console.log(idx);
-      background.style.setProperty("background", "url(".concat(bgUrls[idx++ % bgUrls.length], ")"));
-      background.style.setProperty("background-size", "cover");
-    };
-  };
-
-  setInterval(changeBackground(), 6000);
-});
+var indexImages = __webpack_require__(9);
 
 /***/ }),
 /* 1 */
@@ -67,21 +39,30 @@ __webpack_require__.r(__webpack_exports__);
 /* 3 */
 /***/ (() => {
 
-var menuBtn = document.querySelector(".header__menu-icon");
-menuBtn.addEventListener("click", function () {
-  menuBtn.classList.toggle("header__menu-icon--toggle");
-});
+window.onload = function () {
+  var hoverMenu = function hoverMenu() {
+    var menu = document.querySelector('.header__menu');
+    var shortBar = document.querySelector('.header__menu__bar--shorten');
+    menu.addEventListener('mouseenter', function () {
+      shortBar.classList.remove('header__menu__bar--shorten');
+    });
+    menu.addEventListener('mouseleave', function () {
+      shortBar.classList.add('header__menu__bar--shorten');
+    });
+  };
+
+  hoverMenu();
+};
 
 /***/ }),
 /* 4 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./instagram.jpeg": 5,
-	"./logo.png": 6,
-	"./twitter.png": 7,
-	"./vlive.png": 8,
-	"./youtube.png": 9
+	"./instagram.svg": 5,
+	"./twitter.svg": 6,
+	"./v-live.svg": 7,
+	"./youtube.svg": 8
 };
 
 
@@ -113,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/common/instagram.jpeg?07433820e1ea9d9a320d32e2f368ef2b");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/instagram.svg");
 
 /***/ }),
 /* 6 */
@@ -124,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/common/logo.png?0d5940e4bb598d8e4d61a2ffb1c029be");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/twitter.svg");
 
 /***/ }),
 /* 7 */
@@ -135,7 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/common/twitter.png?96dd80f231e100f8a57b0f9294401121");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/v-live.svg");
 
 /***/ }),
 /* 8 */
@@ -146,43 +127,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/common/vlive.png?ff2e4701c156d1e6df0313eaa565504b");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/youtube.svg");
 
 /***/ }),
 /* 9 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/common/youtube.png?58f02260e05701386df7f57a399aed0a");
-
-/***/ }),
-/* 10 */
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = 10;
-module.exports = webpackEmptyContext;
-
-/***/ }),
-/* 11 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./image1.jpg": 12,
-	"./image2.jpg": 13,
-	"./image3.jpg": 14,
-	"./image4.jpg": 15,
-	"./image5.jpg": 16
+	"./background.jpg": 10
 };
 
 
@@ -203,10 +155,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 11;
+webpackContext.id = 9;
 
 /***/ }),
-/* 12 */
+/* 10 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -214,51 +166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/background-img/image1.jpg?d94ca4d253733b4b1da1cd1fc13ef82e");
-
-/***/ }),
-/* 13 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/background-img/image2.jpg?4d8acd7f46a75ba309a2edc265fe0b89");
-
-/***/ }),
-/* 14 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/background-img/image3.jpg?cdc1e99621cf3f9f71d38540ee274655");
-
-/***/ }),
-/* 15 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/background-img/image4.jpg?0be99b81061fb4154b98dded8170e8b9");
-
-/***/ }),
-/* 16 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "img/background-img/image5.jpg?1a36846d37d61fc3d22f5adf4f4659eb");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/index/background.jpg");
 
 /***/ })
 /******/ 	]);

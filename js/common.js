@@ -1,4 +1,17 @@
-const menuBtn = document.querySelector(".header__menu-icon");
-menuBtn.addEventListener("click", ()=>{
-  menuBtn.classList.toggle("header__menu-icon--toggle");
-});
+window.onload = function() {
+    
+    const hoverMenu = ()=>{
+
+        const menu = document.querySelector('.header__menu')
+        const shortBar = document.querySelector('.header__menu__bar--shorten')
+        menu.addEventListener('mouseenter',()=>{
+            shortBar.classList.remove('header__menu__bar--shorten')
+        })
+        menu.addEventListener('mouseleave',()=>{
+            shortBar.classList.add('header__menu__bar--shorten')
+        })
+    }
+
+    hoverMenu()
+
+}

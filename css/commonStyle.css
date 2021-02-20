@@ -1,57 +1,76 @@
+
+@font-face {
+  font-family: primetime;
+  src: url("../fonts/Primetime.ttf");
+}
+html{ 
+  font-size: 62.5%;
+  font-family: primetime;
+}
 body {
   margin: 0;
   padding: 0;
-}
 
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
 .container {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
 }
+.background {
+  position: fixed;
+  background: url('../images/index/background.jpg') center/100% no-repeat;
+  background-color: black;
+}
 
 /* header */
 .header {
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
-  visibility: hidden;
+  padding:2.5%;
 }
-
-.header--loaded {
-  visibility: visible;
+.header__logo {
+  font-size: 3rem;
+  color:white;
+  /* background-color:#efa1b3; */
 }
-
-.header__logo img {
-  width: 10rem;
+.header__logo__text {
+  display: inline-block;
+  border : white solid 0.5rem;
+  padding:0 0.5rem 0.5rem 0.5rem ;
 }
-
-.header__menu-icon {
+.header__logo--flip{
+  display: inline-block;
+  transform: scaleX(-1);
+}
+.header__menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 2.2rem;
-  width: 2.2rem;
   padding: 0.5rem;
-  border-radius: 100%;
-  transition: transform 0.3s ease;
 }
 
-.header__menu-icon:hover {
+.header__menu:hover {
   cursor: pointer;
 }
 
-.header__menu-icon--toggle {
-  transform: rotate(90deg);
-}
-
-.header__menu-icon__bar {
-  width: 1.7rem;
+.header__menu__bar {
+  width: 5rem;
   height: 0.3rem;
   background-color: white;
-  margin: auto;
-  border-radius: 20%;
+  margin: 0.3rem;
+  transition: width 0.1s;
+  align-self: flex-end;
 }
+.header__menu__bar--shorten{
+  width: 3rem;
+}
+
 
 /* loader */
 .loader {
@@ -97,27 +116,24 @@ body {
 
 /* footer */
 .footer {
-  visibility: hidden;
+  position : fixed;
+  left:2.5%;
+  bottom:2.5%;
 }
-
-.footer--loaded {
-  visibility: visible;
-}
-
 .footer__sns-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .footer__sns-list li {
-  display: inline;
-  margin: 0.5rem;
+  margin-top: 2rem;
 }
 
 .footer__sns-list li img {
-  width: 1.5rem;
+  width: 2.5rem;
   border-radius: 30%;
 }
