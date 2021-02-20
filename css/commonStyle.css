@@ -10,6 +10,7 @@ html{
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
 
 }
 a{
@@ -25,7 +26,17 @@ a{
 .background {
   position: fixed;
   background: url('../images/index/background.jpg') center/100% no-repeat;
-  background-color: black;
+  animation: fadein 2s;
+}
+
+
+@keyframes fadein{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
 }
 
 /* header */
@@ -136,4 +147,8 @@ a{
 .footer__sns-list li img {
   width: 2.5rem;
   border-radius: 30%;
+  transition: transform 0.5s;
+}
+.footer__sns-list li img:hover {
+  transform: translateX(1.5rem);
 }
