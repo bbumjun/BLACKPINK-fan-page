@@ -85,8 +85,14 @@
       width: auto;
       height: auto;
       font-size: 3rem;
-      text-align: center;
       margin: 2rem;
+      a {
+        transition: all 0.5s;
+        &:hover {
+          letter-spacing: 0.5rem;
+          color: #fb98ad;
+        }
+      }
     }
   }
 
@@ -102,6 +108,10 @@
 
       img {
         width: 2.5rem;
+        transition: transform 0.5s;
+        &:hover {
+          transform: translateX(1.5rem);
+        }
       }
     }
   }
