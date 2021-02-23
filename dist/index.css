@@ -93,6 +93,9 @@ a {
       position: absolute;
       bottom: 2.5%;
       left: 2.5%; }
+      @media screen and (max-width: 1080px) {
+        .wrap .side-menu__sns-list {
+          display: none; } }
       .wrap .side-menu__sns-list li {
         margin-top: 2rem; }
         .wrap .side-menu__sns-list li img {
@@ -161,6 +164,9 @@ a {
       display: flex;
       flex-direction: column;
       justify-content: center; }
+      @media screen and (max-width: 1080px) {
+        .wrap .footer__sns-list {
+          display: none; } }
       .wrap .footer__sns-list li {
         margin-top: 2rem; }
         .wrap .footer__sns-list li img {
