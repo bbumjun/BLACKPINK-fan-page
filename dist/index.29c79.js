@@ -50,10 +50,10 @@ __webpack_require__.r(__webpack_exports__);
 })();
 
 (function closeNav() {
-  var closeNavBtn = document.querySelector('.side-menu__header__close-icon');
-  closeNavBtn.addEventListener('click', function () {
+  var closeNavBtn = document.querySelector(".side-menu__header__close-icon");
+  closeNavBtn.addEventListener("click", function () {
     var nav = document.querySelector(".side-menu");
-    nav.style.setProperty('height', '0%');
+    nav.style.setProperty("height", "0%");
   });
 })();
 

@@ -18,10 +18,10 @@
   });
 })();
 
-(function closeNav(){
-    const closeNavBtn = document.querySelector('.side-menu__header__close-icon')
-    closeNavBtn.addEventListener('click',()=>{
-        const nav = document.querySelector(".side-menu")
-        nav.style.setProperty('height','0%');
-    })
-})()
+(function closeNav() {
+  const closeNavBtn = document.querySelector(".side-menu__header__close-icon");
+  closeNavBtn.addEventListener("click", ()=>{
+    const nav = document.querySelector(".side-menu");
+    nav.style.setProperty("height", "0%");
+  });
+})();

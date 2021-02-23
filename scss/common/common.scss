@@ -1,33 +1,36 @@
 @font-face {
-    font-family: primetime;
-    src: url('../../fonts/Primetime.ttf');
+  font-family: primetime;
+  src: url('../../fonts/Primetime.ttf');
 }
+
 html {
-    font: {
-        size: 62.5%;
-        family: primetime;
-    }
+  font: {
+    size: 62.5%;
+    family: primetime;
+  }
 }
-body,ul {
-    margin: 0;
-    padding: 0;
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
 }
-ul,ol{
-    list-style: none;
+
+ul,
+ol {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    color : inherit;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
 .wrap {
-    position: relative;
-    min-height: 100vh;
-    @import "./side-menu";
-    @import "./header";
+  position: relative;
+  min-height: 100vh;
 
-    .container {
- 
-    }
-    @import "./footer";
-
+  @import "./side-menu";
+  @import "./header";
+  @import "./footer";
 }
