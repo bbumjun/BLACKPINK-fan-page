@@ -1,0 +1,22 @@
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: {
+        image: url('../../images/index/background.jpg');
+        size: 100%;
+        position: center;
+        repeat: no-repeat;
+        origin: border-box;
+    }
+    animation: fadein 2s;
+}
+@keyframes fadein{
+    from {
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}

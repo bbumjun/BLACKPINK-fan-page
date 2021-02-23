@@ -9,14 +9,14 @@ module.exports = {
   },
   output: {
     filename: "[name].[contenthash:5].js",
-    path:path.resolve(__dirname,'dist'),
+    path: path.resolve(__dirname, "dist"),
     publicPath: "./",
   },
-  
+
   mode: "none",
   module: {
     rules: [
-      
+
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -28,8 +28,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -37,14 +37,14 @@ module.exports = {
         options: {
           name: "[path][name].[ext]",
         },
-      }, 
+      },
       {
-        test:/\.(ttf|woff)$/,
+        test: /\.(ttf|woff)$/,
         loader: "url-loader",
         options: {
-          name:"[path][name].[ext]",
-          limit:20000,
-        }
+          name: "[path][name].[ext]",
+          limit: 20000,
+        },
       },
     ],
   },
@@ -60,10 +60,8 @@ module.exports = {
   ],
   devServer: {
     port: 3000,
-    contentBase : './dist/',
-    publicPath : '/',
-    open:true,
-    host: '0.0.0.0',
-    disableHostCheck: true
+    contentBase: "./dist/",
+    publicPath: "/",
+    open: true,
   },
 };
