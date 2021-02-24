@@ -1,3 +1,5 @@
+
+@import './reset';
 @font-face {
   font-family: primetime;
   src: url('../../fonts/Primetime.ttf');
@@ -5,7 +7,6 @@
 
 html {
   font: {
-    size: 62.5%;
     family: primetime;
   }
 }
