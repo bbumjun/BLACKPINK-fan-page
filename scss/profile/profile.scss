@@ -1,1 +1,28 @@
-@import '../common/common.scss'
+
+@import '../common/common.scss';
+
+.wrap {
+    .header {
+        position: sticky;
+        background-color: white;
+    }
+
+    #member-profile {
+        @media screen and (min-width: 1080px) {
+            margin: {
+                left: 20%;
+                right: 20%;
+            };
+        }
+        li {
+            margin-bottom: 15vmax;
+            &:nth-child(2n) {
+                float: right;
+            }
+            &:nth-child(2n-1) {
+                float: left;
+            }
+        }
+
+    }
+}
