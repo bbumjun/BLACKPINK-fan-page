@@ -8,6 +8,8 @@
     }
 
     #member-profile {
+        .member-list{
+            overflow: auto;
         @media screen and (min-width: 1080px) {
             margin: {
                 left: 20%;
@@ -25,4 +27,6 @@
         }
 
     }
+}
+
 }
