@@ -28,32 +28,34 @@ __webpack_require__.r(__webpack_exports__);
 /* 2 */
 /***/ (() => {
 
-(function hoverMenu() {
-  var menuIcon = document.querySelector(".header__menu-icon");
-  var shortBar = document.querySelector(".header__menu-icon__bar--short");
-  menuIcon.addEventListener("mouseenter", function () {
-    shortBar.classList.remove("header__menu-icon__bar--short");
-  });
-  menuIcon.addEventListener("mouseleave", function () {
-    shortBar.classList.add("header__menu-icon__bar--short");
-  });
-})();
+document.addEventListener('DOMContentLoaded', function () {
+  (function hoverMenu() {
+    var menuIcon = document.querySelector(".header__menu-icon");
+    var shortBar = document.querySelector(".header__menu-icon__bar--short");
+    menuIcon.addEventListener("mouseenter", function () {
+      shortBar.classList.remove("header__menu-icon__bar--short");
+    });
+    menuIcon.addEventListener("mouseleave", function () {
+      shortBar.classList.add("header__menu-icon__bar--short");
+    });
+  })();
 
-(function openNav() {
-  var openNavBtn = document.querySelector(".header__menu-icon");
-  openNavBtn.addEventListener("click", function () {
-    var nav = document.querySelector(".side-menu");
-    nav.style.setProperty("height", "100%");
-  });
-})();
+  (function openNav() {
+    var openNavBtn = document.querySelector(".header__menu-icon");
+    openNavBtn.addEventListener("click", function () {
+      var nav = document.querySelector(".side-menu");
+      nav.style.setProperty("height", "100%");
+    });
+  })();
 
-(function closeNav() {
-  var closeNavBtn = document.querySelector(".side-menu__header__close-icon");
-  closeNavBtn.addEventListener("click", function () {
-    var nav = document.querySelector(".side-menu");
-    nav.style.setProperty("height", "0%");
-  });
-})();
+  (function closeNav() {
+    var closeNavBtn = document.querySelector(".side-menu__header__close-icon");
+    closeNavBtn.addEventListener("click", function () {
+      var nav = document.querySelector(".side-menu");
+      nav.style.setProperty("height", "0%");
+    });
+  })();
+});
 
 /***/ }),
 /* 3 */
