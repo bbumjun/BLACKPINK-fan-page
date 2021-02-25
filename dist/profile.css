@@ -216,7 +216,9 @@ a {
   background-color: white; }
 
 .wrap #member-profile .member-list {
-  overflow: auto; }
+  overflow: auto;
+  display: flex;
+  flex-direction: column; }
   @media screen and (min-width: 1080px) {
     .wrap #member-profile .member-list {
       margin-left: 20%;
@@ -224,7 +226,7 @@ a {
   .wrap #member-profile .member-list li {
     margin-bottom: 15vmax; }
     .wrap #member-profile .member-list li:nth-child(2n) {
-      float: right; }
+      align-self: flex-end; }
     .wrap #member-profile .member-list li:nth-child(2n-1) {
-      float: left; }
+      align-self: flex-start; }
 
