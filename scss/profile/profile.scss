@@ -10,6 +10,8 @@
     #member-profile {
         .member-list{
             overflow: auto;
+            display: flex;
+            flex-direction: column;
         @media screen and (min-width: 1080px) {
             margin: {
                 left: 20%;
@@ -19,10 +21,10 @@
         li {
             margin-bottom: 15vmax;
             &:nth-child(2n) {
-                float: right;
+                align-self: flex-end;
             }
             &:nth-child(2n-1) {
-                float: left;
+                align-self: flex-start;
             }
         }
 
