@@ -48,7 +48,7 @@ table {
 @font-face {
   font-family: primetime;
   src: url(./fonts/NotoSansKR-Regular.otf);
-  unicode-range: U+0030-0039, U+AC00-U+D7A3; }
+  unicode-range: U+0030-0039; }
 
 html {
   font-size: 62.5%;
