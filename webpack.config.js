@@ -43,7 +43,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(ttf|woff)$/,
+        test: /\.(ttf|woff|otf)$/,
         loader: "url-loader",
         options: {
           name: "[path][name].[ext]",
