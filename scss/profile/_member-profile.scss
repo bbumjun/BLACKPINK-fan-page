@@ -14,20 +14,22 @@
         position: relative;
         
         .profile-description {
-            position: absolute;
-            bottom: -5%;
+            
             opacity: 70%;
             &__name {
-                width: fit-content;
+                width: max-content;
+
                 font-size: 3rem;;
-                position: relative;
+                position: absolute;
+                bottom: 3rem;
                 background-color: white;
                 padding: 0.5rem;
-                margin: 1rem;
             }
             &__detail {
+                width: max-content;
                 background-color: white;
-                position: relative;
+                position: absolute;
+                bottom: -1rem;
                 font-size: 1.5rem;
                 padding: 0.5rem;
 
@@ -40,13 +42,13 @@
                 box-shadow: 15px 15px 20px gray;
             }
             .profile-description {
-                right: -5%;
                 &__name {
-                    right: -40%;
                     box-shadow: 15px 15px 20px gray;
+                    right: -2rem;
                 }
                 &__detail{
                     box-shadow: 15px 15px 20px gray;
+                    right: -2rem;
 
                 }
             }
@@ -57,13 +59,13 @@
                 box-shadow: -15px 15px 20px gray;
             }
             .profile-description {
-                left:-5%;
                 &__name {
-                    left: -30%;
                     box-shadow: -15px 15px 20px gray;
+                    left: -2rem;
                 }
                 &__detail{
                     box-shadow: -15px 15px 20px gray;
+                    left: -2rem;
                 }
             }
         }
