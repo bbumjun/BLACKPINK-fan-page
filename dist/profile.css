@@ -233,41 +233,39 @@ a {
     margin-bottom: 15vmax;
     position: relative; }
     .wrap #member-profile .member-list li .profile-description {
-      position: absolute;
-      bottom: -5%;
       opacity: 70%; }
       .wrap #member-profile .member-list li .profile-description__name {
-        width: fit-content;
+        width: max-content;
         font-size: 3rem;
-        position: relative;
+        position: absolute;
+        bottom: 3rem;
         background-color: white;
-        padding: 0.5rem;
-        margin: 1rem; }
+        padding: 0.5rem; }
       .wrap #member-profile .member-list li .profile-description__detail {
+        width: max-content;
         background-color: white;
-        position: relative;
+        position: absolute;
+        bottom: -1rem;
         font-size: 1.5rem;
         padding: 0.5rem; }
     .wrap #member-profile .member-list li:nth-child(2n-1) {
       align-self: flex-start; }
       .wrap #member-profile .member-list li:nth-child(2n-1) img {
         box-shadow: 15px 15px 20px gray; }
-      .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description {
-        right: -5%; }
-        .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__name {
-          right: -40%;
-          box-shadow: 15px 15px 20px gray; }
-        .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__detail {
-          box-shadow: 15px 15px 20px gray; }
+      .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__name {
+        box-shadow: 15px 15px 20px gray;
+        right: -2rem; }
+      .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__detail {
+        box-shadow: 15px 15px 20px gray;
+        right: -2rem; }
     .wrap #member-profile .member-list li:nth-child(2n) {
       align-self: flex-end; }
       .wrap #member-profile .member-list li:nth-child(2n) img {
         box-shadow: -15px 15px 20px gray; }
-      .wrap #member-profile .member-list li:nth-child(2n) .profile-description {
-        left: -5%; }
-        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__name {
-          left: -30%;
-          box-shadow: -15px 15px 20px gray; }
-        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__detail {
-          box-shadow: -15px 15px 20px gray; }
+      .wrap #member-profile .member-list li:nth-child(2n) .profile-description__name {
+        box-shadow: -15px 15px 20px gray;
+        left: -2rem; }
+      .wrap #member-profile .member-list li:nth-child(2n) .profile-description__detail {
+        box-shadow: -15px 15px 20px gray;
+        left: -2rem; }
 
