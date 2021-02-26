@@ -11,76 +11,63 @@
     }
     li {
         margin-bottom: 15vmax;
-        &:nth-child(2n) {
-            align-self: flex-end;
-            position: relative;
-            img {
-                box-shadow: -15px 15px 20px gray;
-
-            }
-            
-            .profile-description {
-                position: absolute;
-                bottom: -5%;
-                left:-5%;
-                opacity: 70%;
-                &__name {
-                    width: fit-content;
-                    font: {
-                        size: 3rem;
-                    }
-                    position: relative;
-                    left: -30%;
-                    background-color: white;
-                    padding: 1rem;
-                    margin: 1rem;
-                }
-    
-                &__detail {
-                    background-color: white;
-                    position: relative;
-                    font: {
-                        size: 1.5rem;
-                    }
-                    padding: 1rem;
-                }
-            }
-        }
-        &:nth-child(2n-1) {
-            align-self: flex-start;
-            position: relative;
-            img {
-                box-shadow: 15px 15px 20px gray;
-            }
-            
+        position: relative;
+        
         .profile-description {
             position: absolute;
             bottom: -5%;
-            right: -5%;
             opacity: 70%;
             &__name {
                 width: fit-content;
-                font: {
-                    size: 3rem;
-                }
+                font-size: 3rem;;
                 position: relative;
-                right: -40%;
                 background-color: white;
-                padding: 1rem;
+                padding: 0.5rem;
                 margin: 1rem;
             }
-
             &__detail {
                 background-color: white;
                 position: relative;
-                font: {
-                    size: 1.5rem;
+                font-size: 1.5rem;
+                padding: 0.5rem;
+
+            }
+          
+        }
+        &:nth-child(2n-1) {
+            align-self: flex-start;
+            img {
+                box-shadow: 15px 15px 20px gray;
+            }
+            .profile-description {
+                right: -5%;
+                &__name {
+                    right: -40%;
+                    box-shadow: 15px 15px 20px gray;
                 }
-                padding: 1rem;
+                &__detail{
+                    box-shadow: 15px 15px 20px gray;
+
+                }
             }
         }
+        &:nth-child(2n) {
+            align-self: flex-end;
+            img {
+                box-shadow: -15px 15px 20px gray;
+            }
+            .profile-description {
+                left:-5%;
+                &__name {
+                    left: -30%;
+                    box-shadow: -15px 15px 20px gray;
+                }
+                &__detail{
+                    box-shadow: -15px 15px 20px gray;
+                }
+            }
         }
-        
+
     }
 
 }
