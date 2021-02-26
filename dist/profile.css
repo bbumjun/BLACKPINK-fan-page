@@ -47,7 +47,7 @@ table {
 
 @font-face {
   font-family: primetime;
-  src: url(./fonts/NotoSansKR-Regular.otf);
+  src: url(./fonts/NotoSansKR-Black.otf);
   unicode-range: U+0030-0039; }
 
 html {
@@ -230,51 +230,44 @@ a {
       margin-left: 20%;
       margin-right: 20%; } }
   .wrap #member-profile .member-list li {
-    margin-bottom: 15vmax; }
-    .wrap #member-profile .member-list li:nth-child(2n) {
-      align-self: flex-end;
-      position: relative; }
-      .wrap #member-profile .member-list li:nth-child(2n) img {
-        box-shadow: -15px 15px 20px gray; }
-      .wrap #member-profile .member-list li:nth-child(2n) .profile-description {
-        position: absolute;
-        bottom: -5%;
-        left: -5%;
-        opacity: 70%; }
-        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__name {
-          width: fit-content;
-          font-size: 3rem;
-          position: relative;
-          left: -30%;
-          background-color: white;
-          padding: 1rem;
-          margin: 1rem; }
-        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__detail {
-          background-color: white;
-          position: relative;
-          font-size: 1.5rem;
-          padding: 1rem; }
+    margin-bottom: 15vmax;
+    position: relative; }
+    .wrap #member-profile .member-list li .profile-description {
+      position: absolute;
+      bottom: -5%;
+      opacity: 70%; }
+      .wrap #member-profile .member-list li .profile-description__name {
+        width: fit-content;
+        font-size: 3rem;
+        position: relative;
+        background-color: white;
+        padding: 0.5rem;
+        margin: 1rem; }
+      .wrap #member-profile .member-list li .profile-description__detail {
+        background-color: white;
+        position: relative;
+        font-size: 1.5rem;
+        padding: 0.5rem; }
     .wrap #member-profile .member-list li:nth-child(2n-1) {
-      align-self: flex-start;
-      position: relative; }
+      align-self: flex-start; }
       .wrap #member-profile .member-list li:nth-child(2n-1) img {
         box-shadow: 15px 15px 20px gray; }
       .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description {
-        position: absolute;
-        bottom: -5%;
-        right: -5%;
-        opacity: 70%; }
+        right: -5%; }
         .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__name {
-          width: fit-content;
-          font-size: 3rem;
-          position: relative;
           right: -40%;
-          background-color: white;
-          padding: 1rem;
-          margin: 1rem; }
+          box-shadow: 15px 15px 20px gray; }
         .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__detail {
-          background-color: white;
-          position: relative;
-          font-size: 1.5rem;
-          padding: 1rem; }
+          box-shadow: 15px 15px 20px gray; }
+    .wrap #member-profile .member-list li:nth-child(2n) {
+      align-self: flex-end; }
+      .wrap #member-profile .member-list li:nth-child(2n) img {
+        box-shadow: -15px 15px 20px gray; }
+      .wrap #member-profile .member-list li:nth-child(2n) .profile-description {
+        left: -5%; }
+        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__name {
+          left: -30%;
+          box-shadow: -15px 15px 20px gray; }
+        .wrap #member-profile .member-list li:nth-child(2n) .profile-description__detail {
+          box-shadow: -15px 15px 20px gray; }
 
