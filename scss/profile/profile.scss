@@ -7,28 +7,6 @@
         background-color: white;
     }
 
-    #member-profile {
-        .member-list{
-            overflow: auto;
-            display: flex;
-            flex-direction: column;
-        @media screen and (min-width: 1080px) {
-            margin: {
-                left: 20%;
-                right: 20%;
-            };
-        }
-        li {
-            margin-bottom: 15vmax;
-            &:nth-child(2n) {
-                align-self: flex-end;
-            }
-            &:nth-child(2n-1) {
-                align-self: flex-start;
-            }
-        }
-
-    }
-}
+    @import 'member-profile';
 
 }
