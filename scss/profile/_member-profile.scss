@@ -1,76 +1,96 @@
-#member-profile {
-    .member-list{
-        overflow: auto;
-        display: flex;
-        flex-direction: column;
-    @media screen and (min-width: 1080px) {
-        margin: {
-            left: 20%;
-            right: 20%;
-        };
-    }
-    li {
-        margin-bottom: 15vmax;
-        position: relative;
-        
-        .profile-description {
-            
-            opacity: 70%;
-            &__name {
-                width: max-content;
+@mixin show($delay : 0s) {
+  animation: slidein 0.5s ease $delay;
+  visibility: visible;
 
-                font-size: 3rem;;
-                position: absolute;
-                bottom: 3rem;
-                background-color: white;
-                padding: 0.5rem;
-            }
-            &__detail {
-                width: max-content;
-                background-color: white;
-                position: absolute;
-                bottom: -1rem;
-                font-size: 1.5rem;
-                padding: 0.5rem;
-
-            }
-          
-        }
-        &:nth-child(2n-1) {
-            align-self: flex-start;
-            img {
-                box-shadow: 15px 15px 20px gray;
-            }
-            .profile-description {
-                &__name {
-                    box-shadow: 15px 15px 20px gray;
-                    right: -2rem;
-                }
-                &__detail{
-                    box-shadow: 15px 15px 20px gray;
-                    right: -2rem;
-
-                }
-            }
-        }
-        &:nth-child(2n) {
-            align-self: flex-end;
-            img {
-                box-shadow: -15px 15px 20px gray;
-            }
-            .profile-description {
-                &__name {
-                    box-shadow: -15px 15px 20px gray;
-                    left: -2rem;
-                }
-                &__detail{
-                    box-shadow: -15px 15px 20px gray;
-                    left: -2rem;
-                }
-            }
-        }
-
+  @keyframes slidein {
+    from {
+      margin-left: -30%;
+      margin-right: -30%;
+      opacity: 0%;
     }
 
+    to {
+      margin-left: 0%;
+      margin-right: 0%;
+      opacity: 100%;
+    }
+  }
 }
+
+#member-profile {
+  .member-list {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1080px) {
+      margin: {
+        left: 20%;
+        right: 20%;
+      };
+    }
+
+    li {
+      margin-bottom: 15vmax;
+      position: relative;
+
+      .name {
+        font-size: 3rem;
+        position: absolute;
+        bottom: 3rem;
+        background-color: white;
+        padding: 0.5rem;
+        visibility: hidden;
+      }
+
+      .detail {
+        background-color: white;
+        position: absolute;
+        bottom: -1rem;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        visibility: hidden;
+      }
+
+      .show {
+        @include show;
+      }
+
+      &:nth-child(2n-1) {
+        align-self: flex-start;
+
+        img {
+          box-shadow: 15px 15px 20px gray;
+        }
+
+        .name {
+          box-shadow: 15px 15px 20px gray;
+          right: -2rem;
+        }
+
+        .detail {
+          box-shadow: 15px 15px 20px gray;
+          right: -2rem;
+        }
+      }
+
+      &:nth-child(2n) {
+        align-self: flex-end;
+
+        img {
+          box-shadow: -15px 15px 20px gray;
+        }
+
+        .name {
+          box-shadow: -15px 15px 20px gray;
+          left: -2rem;
+        }
+
+        .detail {
+          box-shadow: -15px 15px 20px gray;
+          left: -2rem;
+        }
+      }
+    }
+  }
 }
