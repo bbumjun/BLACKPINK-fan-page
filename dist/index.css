@@ -309,6 +309,9 @@ a {
   background-repeat: no-repeat;
   background-origin: border-box;
   animation: fadein 2s; }
+  @media screen and (max-width: 1080px) {
+    .background {
+      background-size: 220%; } }
   .background .filter {
     position: inherit;
     width: 100%;

@@ -9,6 +9,10 @@
     position: center;
     repeat: no-repeat;
     origin: border-box;
+
+  }
+  @media screen and (max-width: 1080px) {
+    background-size: 220%;  
   }
 
   animation: fadein 2s;
