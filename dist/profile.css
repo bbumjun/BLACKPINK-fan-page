@@ -311,6 +311,7 @@ a {
       margin-left: 20%;
       margin-right: 20%; } }
   .wrap #member-profile .member-list li {
+    margin-top: 3vmax;
     margin-bottom: 15vmax;
     position: relative; }
     .wrap #member-profile .member-list li .name {
