@@ -2,11 +2,10 @@
 @import '../common/common.scss';
 
 .wrap {
-    .header {
-        position: sticky;
-        background-color: white;
-    }
+  .header {
+    position: sticky;
+    background-color: white;
+  }
 
-    @import 'member-profile';
-
+  @import 'member-profile';
 }

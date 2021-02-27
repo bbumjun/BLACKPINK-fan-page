@@ -5,7 +5,7 @@
 /* 2 */
 /***/ (() => {
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   (function hoverMenu() {
     var menuIcon = document.querySelector(".header__menu-icon");
     var shortBar = document.querySelector(".header__menu-icon__bar--short");
@@ -187,7 +187,30 @@ __webpack_require__(3);
 
 __webpack_require__(17);
 
-document.addEventListener('DOMContentLoaded', function () {});
+window.addEventListener("load", function () {
+  var options = {
+    threshold: 0.8
+  };
+  var io = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      console.log(entry.target);
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    });
+  }, options);
+  var names = document.querySelectorAll(".member .name");
+  var details = document.querySelectorAll(".member .detail");
+  names.forEach(function (name) {
+    io.observe(name);
+  });
+  details.forEach(function (detail) {
+    io.observe(detail);
+  });
+});
 
 /***/ }),
 /* 16 */

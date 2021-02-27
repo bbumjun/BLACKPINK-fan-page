@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,21 +87,34 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block; }
 
 body {
   line-height: 1; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: '';
   content: none; }
 
@@ -232,40 +313,51 @@ a {
   .wrap #member-profile .member-list li {
     margin-bottom: 15vmax;
     position: relative; }
-    .wrap #member-profile .member-list li .profile-description {
-      opacity: 70%; }
-      .wrap #member-profile .member-list li .profile-description__name {
-        width: max-content;
-        font-size: 3rem;
-        position: absolute;
-        bottom: 3rem;
-        background-color: white;
-        padding: 0.5rem; }
-      .wrap #member-profile .member-list li .profile-description__detail {
-        width: max-content;
-        background-color: white;
-        position: absolute;
-        bottom: -1rem;
-        font-size: 1.5rem;
-        padding: 0.5rem; }
+    .wrap #member-profile .member-list li .name {
+      font-size: 3rem;
+      position: absolute;
+      bottom: 3rem;
+      background-color: white;
+      padding: 0.5rem;
+      visibility: hidden; }
+    .wrap #member-profile .member-list li .detail {
+      background-color: white;
+      position: absolute;
+      bottom: -1rem;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      visibility: hidden; }
+    .wrap #member-profile .member-list li .show {
+      animation: slidein 0.5s ease 0s;
+      visibility: visible; }
+
+@keyframes slidein {
+  from {
+    margin-left: -30%;
+    margin-right: -30%;
+    opacity: 0%; }
+  to {
+    margin-left: 0%;
+    margin-right: 0%;
+    opacity: 100%; } }
     .wrap #member-profile .member-list li:nth-child(2n-1) {
       align-self: flex-start; }
       .wrap #member-profile .member-list li:nth-child(2n-1) img {
         box-shadow: 15px 15px 20px gray; }
-      .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__name {
+      .wrap #member-profile .member-list li:nth-child(2n-1) .name {
         box-shadow: 15px 15px 20px gray;
         right: -2rem; }
-      .wrap #member-profile .member-list li:nth-child(2n-1) .profile-description__detail {
+      .wrap #member-profile .member-list li:nth-child(2n-1) .detail {
         box-shadow: 15px 15px 20px gray;
         right: -2rem; }
     .wrap #member-profile .member-list li:nth-child(2n) {
       align-self: flex-end; }
       .wrap #member-profile .member-list li:nth-child(2n) img {
         box-shadow: -15px 15px 20px gray; }
-      .wrap #member-profile .member-list li:nth-child(2n) .profile-description__name {
+      .wrap #member-profile .member-list li:nth-child(2n) .name {
         box-shadow: -15px 15px 20px gray;
         left: -2rem; }
-      .wrap #member-profile .member-list li:nth-child(2n) .profile-description__detail {
+      .wrap #member-profile .member-list li:nth-child(2n) .detail {
         box-shadow: -15px 15px 20px gray;
         left: -2rem; }
 
