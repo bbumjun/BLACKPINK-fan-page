@@ -36,7 +36,9 @@
         bottom : 15vmax;
       }
       position: relative;
-
+      img {
+        width: 55vmin;
+      }
       .name {
         font-size: 3rem;
         position: absolute;

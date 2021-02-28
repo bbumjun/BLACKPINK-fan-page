@@ -265,8 +265,7 @@ a {
         height: 0.4rem;
         background-color: black;
         margin: 0.3rem;
-        transition: width 0.1s;
-        align-self: flex; }
+        transition: width 0.1s; }
         .wrap .header__menu-icon__bar--white {
           background-color: white; }
         .wrap .header__menu-icon__bar--short {
@@ -314,6 +313,8 @@ a {
     margin-top: 3vmax;
     margin-bottom: 15vmax;
     position: relative; }
+    .wrap #member-profile .member-list li img {
+      width: 55vmin; }
     .wrap #member-profile .member-list li .name {
       font-size: 3rem;
       position: absolute;
