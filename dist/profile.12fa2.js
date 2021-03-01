@@ -32,6 +32,27 @@ window.addEventListener("load", function () {
       nav.style.setProperty("height", "0%");
     });
   })();
+
+  (function stickHeader() {
+    var header = document.querySelector('.header');
+    var lastScrollY = window.scrollY;
+    var timer;
+    window.addEventListener('scroll', function (e) {
+      if (!timer) {
+        timer = setTimeout(function () {
+          timer = null;
+
+          if (window.scrollY < lastScrollY) {
+            header.style.setProperty('position', 'sticky');
+          } else {
+            header.style.setProperty('position', 'relative');
+          }
+
+          lastScrollY = window.scrollY;
+        }, 200);
+      }
+    });
+  })();
 });
 
 /***/ }),
@@ -188,47 +209,27 @@ __webpack_require__(3);
 __webpack_require__(17);
 
 window.addEventListener("load", function () {
-  var options = {
-    threshold: 0.8
-  };
-  var io = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) {
-        return;
-      }
+  (function slideProfile() {
+    var options = {
+      threshold: 0.8
+    };
+    var io = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      });
+    }, options);
+    var names = document.querySelectorAll(".member .name");
+    var details = document.querySelectorAll(".member .detail");
+    names.forEach(function (name) {
+      io.observe(name);
     });
-  }, options);
-  var names = document.querySelectorAll(".member .name");
-  var details = document.querySelectorAll(".member .detail");
-  names.forEach(function (name) {
-    io.observe(name);
-  });
-  details.forEach(function (detail) {
-    io.observe(detail);
-  });
-
-  (function stickHeader() {
-    var header = document.querySelector('.header');
-    var lastScrollY = window.scrollY;
-    var timer;
-    window.addEventListener('scroll', function (e) {
-      if (!timer) {
-        timer = setTimeout(function () {
-          console.log(lastScrollY, window.scrollY);
-          timer = null;
-
-          if (window.scrollY < lastScrollY) {
-            header.style.setProperty('position', 'sticky');
-          } else {
-            header.style.setProperty('position', 'relative');
-          }
-
-          lastScrollY = window.scrollY;
-        }, 250);
-      }
+    details.forEach(function (detail) {
+      io.observe(detail);
     });
   })();
 });

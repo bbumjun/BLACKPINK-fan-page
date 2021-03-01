@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     index: "./js/index.js",
     profile: "./js/profile.js",
+    gallery: "./js/gallery.js",
   },
   output: {
     filename: "[name].[contenthash:5].js",
@@ -17,7 +18,6 @@ module.exports = {
   mode: "none",
   module: {
     rules: [
-
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -36,7 +36,7 @@ module.exports = {
           "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        test: /\.(png|jpeg|jpg|gif|svg|webp)$/i,
         loader: "file-loader",
         options: {
           name: "[path][name].[ext]",
@@ -53,6 +53,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./html/index.html",
       filename: "./index.html",
@@ -63,8 +64,12 @@ module.exports = {
       filename: "./profile.html",
       chunks: ["profile"],
     }),
+    new HtmlWebpackPlugin({
+      template: "./html/gallery.html",
+      filename: "./gallery.html",
+      chunks: ["gallery"],
+    }),
     new webpack.ProgressPlugin(),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({filename: "[name].css"}),
   ],
   devServer: {

@@ -133,7 +133,7 @@ table {
 
 html {
   font-size: 62.5%;
-  font-family: primetime; }
+  font-family: primetime, monospace; }
 
 body,
 ul {
@@ -230,12 +230,14 @@ a {
           .wrap .side-menu__sns-list li img:hover {
             transform: translateX(1.5rem); }
   .wrap .header {
-    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     height: 8rem;
-    z-index: 5; }
+    z-index: 5;
+    background-color: white; }
     .wrap .header--white {
       color: white; }
     .wrap .header__logo {
@@ -298,6 +300,7 @@ a {
             transform: translateX(1.5rem); }
 
 .wrap .header {
+  position: -webkit-sticky;
   position: sticky;
   background-color: white; }
 
@@ -330,8 +333,19 @@ a {
       padding: 0.5rem;
       visibility: hidden; }
     .wrap #member-profile .member-list li .show {
-      animation: slidein 0.5s ease 0s;
+      -webkit-animation: slidein 0.5s ease 0s;
+              animation: slidein 0.5s ease 0s;
       visibility: visible; }
+
+@-webkit-keyframes slidein {
+  from {
+    margin-left: -30%;
+    margin-right: -30%;
+    opacity: 0%; }
+  to {
+    margin-left: 0%;
+    margin-right: 0%;
+    opacity: 100%; } }
 
 @keyframes slidein {
   from {

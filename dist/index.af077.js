@@ -55,6 +55,27 @@ window.addEventListener("load", function () {
       nav.style.setProperty("height", "0%");
     });
   })();
+
+  (function stickHeader() {
+    var header = document.querySelector('.header');
+    var lastScrollY = window.scrollY;
+    var timer;
+    window.addEventListener('scroll', function (e) {
+      if (!timer) {
+        timer = setTimeout(function () {
+          timer = null;
+
+          if (window.scrollY < lastScrollY) {
+            header.style.setProperty('position', 'sticky');
+          } else {
+            header.style.setProperty('position', 'relative');
+          }
+
+          lastScrollY = window.scrollY;
+        }, 200);
+      }
+    });
+  })();
 });
 
 /***/ }),
