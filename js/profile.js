@@ -4,6 +4,8 @@ require.context("../images/common", true);
 require.context("../images/profile", true);
 
 window.addEventListener("load", ()=>{
+
+  (function slideProfile () {
   const options = {
     threshold: 0.8,
   };
@@ -24,24 +26,8 @@ window.addEventListener("load", ()=>{
   details.forEach((detail)=>{
     io.observe(detail);
   });
-  (function stickHeader(){
-    const header =document.querySelector('.header')
-    let lastScrollY = window.scrollY
-    let timer
-    window.addEventListener('scroll',(e)=>{
-      if(!timer){
-        timer = setTimeout(()=>{
-        console.log(lastScrollY,window.scrollY)
-        timer = null
-        if(window.scrollY < lastScrollY) {
-          header.style.setProperty('position','sticky')
-        } else {
-          header.style.setProperty('position','relative')
-        }
-        lastScrollY = window.scrollY
-      },250)
-    }
-    })
-  })()
+})();
+
+
 });
 
