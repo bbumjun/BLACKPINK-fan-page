@@ -17,7 +17,7 @@ __webpack_require__(13);
 
 (function loadBgImg() {
   var bgImg = new Image();
-  bgImg.src = 'images/index/background.jpg';
+  bgImg.src = '../images/index/background.jpg';
 
   bgImg.onload = function () {
     document.querySelector('.background').style.backgroundImage = "url(".concat(bgImg.src, ")");
