@@ -1,5 +1,6 @@
 import './common'
 import '../scss/gallery/gallery.scss'
+import imageLlist from '../images/gallery/image-list.js'
 import imagesLoaded from 'imagesloaded'
 require.context("../images/common", true);
 require.context("../images/gallery",true)
@@ -19,9 +20,39 @@ function resizeGridItems(){
         })
     })
 }
+let debounce = null
+let imageSrcList = [...imageLlist]
+function scrollHandler () {
+    clearTimeout(debounce)
+    debounce = setTimeout(()=>{
+        const scrollHeight = document.documentElement.scrollHeight;
+        const scrollTop =  document.documentElement.scrollTop;
+        const clientHeight = document.documentElement.clientHeight;
+        if(scrollTop + clientHeight >= scrollHeight) {
 
+            const lazyItems = imageSrcList.slice(0,10)
+            imageSrcList = imageSrcList.slice(10)
+            if(lazyItems.length) {
+            lazyItems.forEach(item =>{
+                const gridContainer = document.querySelector('.wrapper')
+                let newItem = document.createElement('div')
+                let image = document.createElement('img')
+                newItem.classList.add('item')
+                image.src = item
+                image.alt = 'blackpink gallery'
+                image.classList.add('content')
+                newItem.appendChild(image)
+                gridContainer.appendChild(newItem)
+            })
+            resizeGridItems()
+        } else {
+            window.removeEventListener('scroll',scrollHandler)
+        }
+    }
+},300)
+}
 window.addEventListener('load',()=>{
     resizeGridItems()
 })
-
 window.addEventListener('resize',resizeGridItems)
+window.addEventListener('scroll',scrollHandler)
