@@ -757,8 +757,9 @@ function scrollHandler() {
     var scrollHeight = document.documentElement.scrollHeight;
     var scrollTop = document.documentElement.scrollTop;
     var clientHeight = document.documentElement.clientHeight;
+    console.log(scrollTop + clientHeight, scrollHeight);
 
-    if (scrollTop + clientHeight >= scrollHeight) {
+    if (scrollTop + clientHeight >= scrollHeight - 100) {
       var lazyItems = imageSrcList.slice(0, 10);
       imageSrcList = imageSrcList.slice(10);
 
