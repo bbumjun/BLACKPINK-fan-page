@@ -1,9 +1,11 @@
 import "../scss/profile/profile.scss";
 import "./common";
+import imagesLoaded from 'imagesloaded'
 require.context("../images/common", true);
 require.context("../images/profile", true);
 
 window.addEventListener("load", ()=>{
+  
 
   (function slideProfile () {
   const options = {
@@ -31,3 +33,9 @@ window.addEventListener("load", ()=>{
 
 });
 
+(function loadImages() {
+  const images = document.querySelectorAll('.member img')
+  images.forEach(image => { imagesLoaded(image,()=>{
+      image.style.visibility = 'visible';
+  })})
+})()

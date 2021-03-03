@@ -37,6 +37,7 @@
       }
       position: relative;
       img {
+        visibility: hidden;
         width: 55vmin;
       }
       .name {
@@ -66,6 +67,7 @@
 
         img {
           box-shadow: 15px 15px 20px gray;
+
         }
 
         .name {
