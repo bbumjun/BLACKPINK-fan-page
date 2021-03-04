@@ -30,7 +30,7 @@ function resizeGridItems(){
     })
     const gallery = document.querySelector('.wrapper')
     imagesLoaded(gallery,()=>{
-        removeLoader()
+        if(document.querySelector('.loader')) removeLoader()
         document.querySelectorAll('.item').forEach(item=> item.style.visibility = 'visible')
     })
 }

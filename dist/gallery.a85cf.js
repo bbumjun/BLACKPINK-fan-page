@@ -759,7 +759,7 @@ function resizeGridItems() {
   });
   var gallery = document.querySelector('.wrapper');
   imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(gallery, function () {
-    removeLoader();
+    if (document.querySelector('.loader')) removeLoader();
     document.querySelectorAll('.item').forEach(function (item) {
       return item.style.visibility = 'visible';
     });
