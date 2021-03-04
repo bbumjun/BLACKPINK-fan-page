@@ -707,10 +707,11 @@ return EvEmitter;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scss_gallery_gallery_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
+/* harmony import */ var _scss_gallery_gallery_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
+/* harmony import */ var _images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_4__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -728,14 +729,26 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+
 __webpack_require__(3);
 
-__webpack_require__(39);
+__webpack_require__(40);
+
+var initLoader = function initLoader() {
+  var gallery = document.querySelector('.gallery');
+  gallery.appendChild((0,_loader__WEBPACK_IMPORTED_MODULE_1__.default)());
+};
+
+var removeLoader = function removeLoader() {
+  var gallery = document.querySelector('.gallery');
+  var loader = document.querySelector('.loader');
+  gallery.removeChild(loader);
+};
 
 function resizeGridItems() {
   var items = document.querySelectorAll('.item');
   items.forEach(function (item) {
-    imagesloaded__WEBPACK_IMPORTED_MODULE_3___default()(item, function (instance) {
+    imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(item, function (instance) {
       var item = instance.elements[0];
       var grid = document.querySelector('.wrapper');
       var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
@@ -745,56 +758,83 @@ function resizeGridItems() {
     });
   });
   var gallery = document.querySelector('.wrapper');
-  imagesloaded__WEBPACK_IMPORTED_MODULE_3___default()(gallery, function () {
+  imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(gallery, function () {
+    removeLoader();
     document.querySelectorAll('.item').forEach(function (item) {
       return item.style.visibility = 'visible';
     });
   });
 }
 
-var debounce = null;
-
-var imageSrcList = _toConsumableArray(_images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_2__.default);
-
 function scrollHandler() {
-  clearTimeout(debounce);
-  debounce = setTimeout(function () {
-    var scrollHeight = document.documentElement.scrollHeight;
-    var scrollTop = document.documentElement.scrollTop;
-    var clientHeight = document.documentElement.clientHeight;
+  var debounce = null;
 
-    if (scrollTop + clientHeight >= scrollHeight - 100) {
-      var lazyItems = imageSrcList.slice(0, 10);
-      imageSrcList = imageSrcList.slice(10);
+  var imageSrcList = _toConsumableArray(_images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_3__.default);
 
-      if (lazyItems.length) {
-        lazyItems.forEach(function (item) {
-          var gridContainer = document.querySelector('.wrapper');
-          var newItem = document.createElement('div');
-          var image = document.createElement('img');
-          newItem.classList.add('item');
-          image.src = item;
-          image.alt = 'blackpink gallery';
-          image.classList.add('content');
-          newItem.appendChild(image);
-          gridContainer.appendChild(newItem);
-        });
-        resizeGridItems();
-      } else {
-        window.removeEventListener('scroll', scrollHandler);
+  return function () {
+    clearTimeout(debounce);
+    debounce = setTimeout(function () {
+      var scrollHeight = document.documentElement.scrollHeight;
+      var scrollTop = document.documentElement.scrollTop;
+      var clientHeight = document.documentElement.clientHeight;
+
+      if (scrollTop + clientHeight >= scrollHeight - 100) {
+        var lazyItems = imageSrcList.slice(0, 10);
+        imageSrcList = imageSrcList.slice(10);
+
+        if (lazyItems.length) {
+          initLoader();
+          lazyItems.forEach(function (item) {
+            var gridContainer = document.querySelector('.wrapper');
+            var newItem = document.createElement('div');
+            var image = document.createElement('img');
+            newItem.classList.add('item');
+            image.src = item;
+            image.alt = 'blackpink gallery';
+            image.classList.add('content');
+            newItem.appendChild(image);
+            gridContainer.appendChild(newItem);
+          });
+          resizeGridItems();
+        } else {
+          window.removeEventListener('scroll', scrollHandler);
+        }
       }
-    }
-  }, 300);
+    }, 300);
+  };
 }
 
 window.addEventListener('load', function () {
+  initLoader();
   resizeGridItems();
 });
 window.addEventListener('resize', resizeGridItems);
-window.addEventListener('scroll', scrollHandler);
+window.addEventListener('scroll', scrollHandler());
 
 /***/ }),
 /* 37 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ loader)
+/* harmony export */ });
+function loader() {
+  var loader = document.createElement('div');
+  loader.classList.add('loader');
+
+  for (var i = 0; i < 3; i++) {
+    var dot = document.createElement('div');
+    dot.classList.add('dots');
+    loader.appendChild(dot);
+  }
+
+  return loader;
+}
+
+/***/ }),
+/* 38 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -803,7 +843,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -814,27 +854,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (["https://i.pinimg.com/originals/b4/a4/8f/b4a48f78e67ac8fd61c14b588254a87f.gif", "https://i.pinimg.com/564x/18/48/50/184850af144ca570c17dc33cb719b376.jpg", "https://i.pinimg.com/564x/0b/64/50/0b6450bbccea39f346e373c6eaeaf7e1.jpg", "https://i.pinimg.com/564x/66/03/ec/6603ecffa6f8c04319be76f1e896a1f8.jpg", "https://i.pinimg.com/564x/d7/81/f7/d781f77626bda7cb6153be0857550661.jpg", "https://i.pinimg.com/564x/8d/16/0b/8d160bdd704f0221834cbfa1729c4d9d.jpg", "https://i.pinimg.com/564x/99/c8/5b/99c85b14e64ceba81b78ae794bdcb662.jpg", "https://i.pinimg.com/564x/e0/03/e6/e003e6facbb95843585eca1b29d44315.jpg", "https://i.pinimg.com/originals/30/c2/4e/30c24eca6ff62d4124cc923b88c453c2.gif", "https://i.pinimg.com/564x/c1/05/3e/c1053e52cd39ed4eca3d1a2e97a7d391.jpg", "https://i.pinimg.com/564x/e9/0b/ce/e90bce217f9cdbcc622cffcb3c5ce351.jpg", "https://i.pinimg.com/564x/78/c6/ec/78c6ec2c5ca6d8b404c980894f58f4b7.jpg", "https://i.pinimg.com/564x/5d/53/38/5d5338d595f43fdd82dc3ef13761c64e.jpg", "https://i.pinimg.com/564x/bb/4a/8d/bb4a8d00cbfee2f53bc6d7f2e00a052a.jpg", "https://i.pinimg.com/564x/9a/38/dd/9a38ddd5d587164d59a81ca212a867c0.jpg", "https://i.pinimg.com/564x/65/fe/b5/65feb5ddf2df00e659cf17a7f50faced.jpg", "https://i.pinimg.com/564x/43/3e/a9/433ea95dd9e26fabfa6020d9d867e5f1.jpg", "https://i.pinimg.com/564x/66/fc/c7/66fcc71e5ef01e782fc11d3a33ec0dec.jpg", "https://i.pinimg.com/originals/a1/8b/fc/a18bfcf4113ee210782a991874cdd79a.gif", "https://i.pinimg.com/564x/5f/b7/40/5fb7400a10d9c13f57dd5348e1979aa1.jpg", "https://i.pinimg.com/236x/13/96/81/13968197d2e13dfa9849abc8e86e70ce.jpg", "https://i.pinimg.com/originals/6c/98/a9/6c98a9d00d0f582b1ee350d66d72d897.gif", "https://i.pinimg.com/564x/2c/c9/33/2cc9331a3ce1d1d97f41624a31e1cde1.jpg", "https://i.pinimg.com/originals/18/08/cf/1808cf1e135aba94882d47dafc1b9de9.gif"]);
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./gallery-1.jpg": 40,
-	"./gallery-10.jpg": 41,
-	"./gallery-11.jpg": 42,
-	"./gallery-12.jpg": 43,
-	"./gallery-13.jpg": 44,
-	"./gallery-14.jpg": 45,
-	"./gallery-15.jpg": 46,
-	"./gallery-2.jpg": 47,
-	"./gallery-3.jpg": 48,
-	"./gallery-4.jpg": 49,
-	"./gallery-5.jpg": 50,
-	"./gallery-6.jpg": 51,
-	"./gallery-7.jpg": 52,
-	"./gallery-8.jpg": 53,
-	"./gallery-9.jpg": 54,
-	"./image-list": 38,
-	"./image-list.js": 38
+	"./gallery-1.jpg": 41,
+	"./gallery-10.jpg": 42,
+	"./gallery-11.jpg": 43,
+	"./gallery-12.jpg": 44,
+	"./gallery-13.jpg": 45,
+	"./gallery-14.jpg": 46,
+	"./gallery-15.jpg": 47,
+	"./gallery-2.jpg": 48,
+	"./gallery-3.jpg": 49,
+	"./gallery-4.jpg": 50,
+	"./gallery-5.jpg": 51,
+	"./gallery-6.jpg": 52,
+	"./gallery-7.jpg": 53,
+	"./gallery-8.jpg": 54,
+	"./gallery-9.jpg": 55,
+	"./image-list": 39,
+	"./image-list.js": 39
 };
 
 
@@ -855,18 +895,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 39;
-
-/***/ }),
-/* 40 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-1.jpg");
+webpackContext.id = 40;
 
 /***/ }),
 /* 41 */
@@ -877,7 +906,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-10.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-1.jpg");
 
 /***/ }),
 /* 42 */
@@ -888,7 +917,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-11.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-10.jpg");
 
 /***/ }),
 /* 43 */
@@ -899,7 +928,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-12.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-11.jpg");
 
 /***/ }),
 /* 44 */
@@ -910,7 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-13.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-12.jpg");
 
 /***/ }),
 /* 45 */
@@ -921,7 +950,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-14.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-13.jpg");
 
 /***/ }),
 /* 46 */
@@ -932,7 +961,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-15.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-14.jpg");
 
 /***/ }),
 /* 47 */
@@ -943,7 +972,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-2.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-15.jpg");
 
 /***/ }),
 /* 48 */
@@ -954,7 +983,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-3.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-2.jpg");
 
 /***/ }),
 /* 49 */
@@ -965,7 +994,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-4.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-3.jpg");
 
 /***/ }),
 /* 50 */
@@ -976,7 +1005,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-5.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-4.jpg");
 
 /***/ }),
 /* 51 */
@@ -987,7 +1016,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-6.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-5.jpg");
 
 /***/ }),
 /* 52 */
@@ -998,7 +1027,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-7.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-6.jpg");
 
 /***/ }),
 /* 53 */
@@ -1009,10 +1038,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-8.jpg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-7.jpg");
 
 /***/ }),
 /* 54 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/gallery/gallery-8.jpg");
+
+/***/ }),
+/* 55 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";

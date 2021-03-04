@@ -313,9 +313,41 @@ a {
   .gallery .wrapper .item {
     border-radius: 2rem;
     overflow: hidden;
-    visibility: hidden; }
+    visibility: collapse; }
   .gallery .wrapper img {
     width: 100%; }
-  .gallery .wrapper .lazy {
-    display: none; }
+
+.gallery .loader {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 5rem; }
+  .gallery .loader .dots {
+    width: 1rem;
+    height: 1rem;
+    background-color: black;
+    margin: 1rem;
+    border-radius: 50%;
+    -webkit-animation-name: bigger-smaller;
+            animation-name: bigger-smaller;
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate; }
+
+@-webkit-keyframes bigger-smaller {
+  to {
+    transform: scale(2); } }
+
+@keyframes bigger-smaller {
+  to {
+    transform: scale(2); } }
+    .gallery .loader .dots:nth-child(2) {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+    .gallery .loader .dots:nth-child(3) {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
 

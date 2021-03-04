@@ -18,13 +18,13 @@
         .item {
             border-radius: 2rem;
             overflow: hidden;
-            visibility: hidden;
+            visibility: collapse;
         }
         img{
             width:100%;
         }
-        .lazy {
-            display: none;
-        }
+
     }
+
+    @import '../common/loader';
 }
