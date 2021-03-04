@@ -742,7 +742,12 @@ function resizeGridItems() {
       var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
       var rowSpan = Math.floor((item.querySelector('.content').offsetHeight + rowGap) / (rowHeight + rowGap));
       item.style.gridRowEnd = "span " + rowSpan;
-      item.style.visibility = 'visible';
+    });
+  });
+  var gallery = document.querySelector('.wrapper');
+  imagesloaded__WEBPACK_IMPORTED_MODULE_3___default()(gallery, function () {
+    document.querySelectorAll('.item').forEach(function (item) {
+      return item.style.visibility = 'visible';
     });
   });
 }
@@ -757,7 +762,6 @@ function scrollHandler() {
     var scrollHeight = document.documentElement.scrollHeight;
     var scrollTop = document.documentElement.scrollTop;
     var clientHeight = document.documentElement.clientHeight;
-    console.log(scrollTop + clientHeight, scrollHeight);
 
     if (scrollTop + clientHeight >= scrollHeight - 100) {
       var lazyItems = imageSrcList.slice(0, 10);

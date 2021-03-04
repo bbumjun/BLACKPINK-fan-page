@@ -309,7 +309,7 @@ a {
   grid-gap: 2rem;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-rows: 1rem; }
+  grid-auto-rows: 0.5rem; }
   .gallery .wrapper .item {
     border-radius: 2rem;
     overflow: hidden;
