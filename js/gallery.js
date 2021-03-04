@@ -16,8 +16,11 @@ function resizeGridItems(){
             const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
             const rowSpan =  Math.floor((item.querySelector('.content').offsetHeight+rowGap)/(rowHeight+rowGap))
             item.style.gridRowEnd = "span "+ rowSpan;
-            item.style.visibility = 'visible';
         })
+    })
+    const gallery = document.querySelector('.wrapper')
+    imagesLoaded(gallery,()=>{
+        document.querySelectorAll('.item').forEach(item=> item.style.visibility = 'visible')
     })
 }
 let debounce = null
@@ -28,7 +31,6 @@ function scrollHandler () {
         const scrollHeight = document.documentElement.scrollHeight;
         const scrollTop =  document.documentElement.scrollTop;
         const clientHeight = document.documentElement.clientHeight;
-        console.log(scrollTop+clientHeight,scrollHeight)
         if(scrollTop + clientHeight >= scrollHeight - 100 ) {
 
             const lazyItems = imageSrcList.slice(0,10)
