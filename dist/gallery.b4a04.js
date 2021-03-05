@@ -746,22 +746,23 @@ var removeLoader = function removeLoader() {
 };
 
 function resizeGridItems() {
-  var items = document.querySelectorAll('.item');
+  var items = document.querySelectorAll('.grid-item');
   items.forEach(function (item) {
     imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(item, function (instance) {
       var item = instance.elements[0];
-      var grid = document.querySelector('.wrapper');
+      var grid = document.querySelector('.grid-container');
       var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
       var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
       var rowSpan = Math.floor((item.querySelector('.content').offsetHeight + rowGap) / (rowHeight + rowGap));
       item.style.gridRowEnd = "span " + rowSpan;
+      item.style.backgroundColor = 'gray';
+      item.style.visibility = 'visible';
     });
   });
-  var gallery = document.querySelector('.wrapper');
+  var gallery = document.querySelector('.grid-container');
   imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(gallery, function () {
-    if (document.querySelector('.loader')) removeLoader();
-    document.querySelectorAll('.item').forEach(function (item) {
-      return item.style.visibility = 'visible';
+    document.querySelectorAll('.grid-item').forEach(function (item) {
+      return item.querySelector('img').style.visibility = 'visible';
     });
   });
 }
@@ -783,12 +784,11 @@ function scrollHandler() {
         imageSrcList = imageSrcList.slice(10);
 
         if (lazyItems.length) {
-          initLoader();
           lazyItems.forEach(function (item) {
-            var gridContainer = document.querySelector('.wrapper');
+            var gridContainer = document.querySelector('.grid-container');
             var newItem = document.createElement('div');
             var image = document.createElement('img');
-            newItem.classList.add('item');
+            newItem.classList.add('grid-item');
             image.src = item;
             image.alt = 'blackpink gallery';
             image.classList.add('content');
@@ -797,6 +797,7 @@ function scrollHandler() {
           });
           resizeGridItems();
         } else {
+          if (document.querySelector('.loader')) removeLoader();
           window.removeEventListener('scroll', scrollHandler);
         }
       }

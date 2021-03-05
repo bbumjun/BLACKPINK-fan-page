@@ -26,12 +26,13 @@ function resizeGridItems(){
             const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
             const rowSpan =  Math.floor((item.querySelector('.content').offsetHeight+rowGap)/(rowHeight+rowGap))
             item.style.gridRowEnd = "span "+ rowSpan;
+            item.style.backgroundColor = 'gray';
+            item.style.visibility = 'visible'
         })
     })
     const gallery = document.querySelector('.grid-container')
     imagesLoaded(gallery,()=>{
-        if(document.querySelector('.loader')) removeLoader()
-        document.querySelectorAll('.grid-item').forEach(item=> item.style.visibility = 'visible')
+        document.querySelectorAll('.grid-item').forEach(item=> item.querySelector('img').style.visibility = 'visible')
     })
 }
 function scrollHandler(){
@@ -47,7 +48,6 @@ function scrollHandler(){
                 const lazyItems = imageSrcList.slice(0,10)
                 imageSrcList = imageSrcList.slice(10)
                 if(lazyItems.length) {
-                    if(!document.querySelector('.loader')) initLoader()
                     lazyItems.forEach(item =>{
                     const gridContainer = document.querySelector('.grid-container')
                     let newItem = document.createElement('div')
@@ -61,6 +61,7 @@ function scrollHandler(){
                 })
                 resizeGridItems()
             } else {
+                if(document.querySelector('.loader')) removeLoader()
                 window.removeEventListener('scroll',scrollHandler)
             }
         }

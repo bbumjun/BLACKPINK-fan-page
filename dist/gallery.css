@@ -299,23 +299,23 @@ a {
           .wrap .footer__sns-list li img:hover {
             transform: translateX(1.5rem); }
 
-.gallery .wrapper {
+.gallery .grid-container {
   padding-top: 5rem;
   padding-bottom: 5rem;
   display: grid;
   max-width: 100rem;
-  width: 100%;
   margin: 0 auto;
   grid-gap: 2rem;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-auto-rows: 0.5rem; }
-  .gallery .wrapper .item {
+  .gallery .grid-container .grid-item {
     border-radius: 2rem;
     overflow: hidden;
     visibility: collapse; }
-  .gallery .wrapper img {
-    width: 100%; }
+  .gallery .grid-container img {
+    width: 100%;
+    visibility: hidden; }
 
 .gallery .loader {
   display: flex;
