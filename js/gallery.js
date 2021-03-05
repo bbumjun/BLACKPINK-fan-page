@@ -17,21 +17,21 @@ const removeLoader = ()=>{
     gallery.removeChild(loader)
 }
 function resizeGridItems(){
-    const items = document.querySelectorAll('.item')
+    const items = document.querySelectorAll('.grid-item')
     items.forEach(item=>{
         imagesLoaded(item,(instance)=>{
             const item = instance.elements[0];
-            const grid = document.querySelector('.wrapper')
+            const grid = document.querySelector('.grid-container')
             const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'))
             const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'))
             const rowSpan =  Math.floor((item.querySelector('.content').offsetHeight+rowGap)/(rowHeight+rowGap))
             item.style.gridRowEnd = "span "+ rowSpan;
         })
     })
-    const gallery = document.querySelector('.wrapper')
+    const gallery = document.querySelector('.grid-container')
     imagesLoaded(gallery,()=>{
         if(document.querySelector('.loader')) removeLoader()
-        document.querySelectorAll('.item').forEach(item=> item.style.visibility = 'visible')
+        document.querySelectorAll('.grid-item').forEach(item=> item.style.visibility = 'visible')
     })
 }
 function scrollHandler(){
@@ -47,12 +47,12 @@ function scrollHandler(){
                 const lazyItems = imageSrcList.slice(0,10)
                 imageSrcList = imageSrcList.slice(10)
                 if(lazyItems.length) {
-                initLoader()
-                lazyItems.forEach(item =>{
-                    const gridContainer = document.querySelector('.wrapper')
+                    if(!document.querySelector('.loader')) initLoader()
+                    lazyItems.forEach(item =>{
+                    const gridContainer = document.querySelector('.grid-container')
                     let newItem = document.createElement('div')
                     let image = document.createElement('img')
-                    newItem.classList.add('item')
+                    newItem.classList.add('grid-item')
                     image.src = item
                     image.alt = 'blackpink gallery'
                     image.classList.add('content')
