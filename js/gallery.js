@@ -7,15 +7,6 @@ require.context("../images/common", true);
 require.context("../images/gallery",true)
 
 
-const initLoader = ()=> {
-    const gallery = document.querySelector('.gallery')
-    gallery.appendChild(loader())
-}
-const removeLoader = ()=>{
-    const gallery =document.querySelector('.gallery')
-    const loader = document.querySelector('.loader')
-    gallery.removeChild(loader)
-}
 function resizeGridItems(){
     const items = document.querySelectorAll('.grid-item')
     items.forEach(item=>{
@@ -47,6 +38,7 @@ function scrollHandler(){
             if(scrollTop + clientHeight >= scrollHeight - 100 ) {
                 const lazyItems = imageSrcList.slice(0,10)
                 imageSrcList = imageSrcList.slice(10)
+                if(imageSrcList.length == 0 ) document.querySelector('.loader').style.display = 'none';
                 if(lazyItems.length) {
                     lazyItems.forEach(item =>{
                     const gridContainer = document.querySelector('.grid-container')
@@ -61,7 +53,6 @@ function scrollHandler(){
                 })
                 resizeGridItems()
             } else {
-                if(document.querySelector('.loader')) removeLoader()
                 window.removeEventListener('scroll',scrollHandler)
             }
         }
@@ -69,7 +60,7 @@ function scrollHandler(){
     }
 }
 window.addEventListener('load',()=>{
-    initLoader()
+    document.querySelector('.loader').style.display = 'flex';
     resizeGridItems()
 })
 window.addEventListener('resize',resizeGridItems)
