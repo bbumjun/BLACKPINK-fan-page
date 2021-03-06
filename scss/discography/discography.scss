@@ -1,10 +1,5 @@
 @import "../common/common.scss";
 
-@media screen and (max-width: 1080px) {
-  html {
-    font-size: 5px;
-  }
-}
 
 .wrap {
   background-image: url(../../images/common/noisy-texture-100x100.png);
@@ -29,30 +24,31 @@
 
     @media screen and (max-width: 1080px) {
       grid-template-columns: repeat(1, minmax(20rem, 1fr));
-      grid-template-rows: repeat(auto-fit, minmax(50rem, 1fr));
     }
 
     .title {
       grid-column-end: span 2;
       vertical-align: baseline;
+      margin: auto 0;
+      font-size: 8rem;
 
       @media screen and (max-width: 1080px) {
         grid-column-end: span 1;
-      }
 
-      margin: auto 0;
-      font-size: 8rem;
+        font-size: 4rem;
+      }
     }
 
     .sub-title {
       margin: auto 0;
-
-      @media screen and (min-width: 1080px) {
-        position: relative;
-        top: 4rem;
+      position: relative;
+      top: 4rem;
+      font-size: 4rem;
+      @media screen and (max-width: 1080px) {
+        font-size: 2rem;
+        position: static;
+        margin-bottom: 2rem;
       }
-
-      font-size: 3.5rem;
     }
 
     .album {

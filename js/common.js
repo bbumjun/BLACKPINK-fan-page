@@ -26,22 +26,5 @@ window.addEventListener("DOMContentLoaded", ()=>{
     });
   })();
 
-  (function stickHeader(){
-    const header =document.querySelector('.header')
-    let lastScrollY = window.scrollY
-    let timer
-    window.addEventListener('scroll',(e)=>{
-      if(!timer){
-        timer = setTimeout(()=>{
-        timer = null
-        if(window.scrollY < lastScrollY) {
-          header.style.setProperty('position','sticky')
-        } else {
-          header.style.setProperty('position','relative')
-        }
-        lastScrollY = window.scrollY
-      },200)
-    }
-    })
-  })();
+
 });
