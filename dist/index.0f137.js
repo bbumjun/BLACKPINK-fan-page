@@ -37,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 /* 2 */
 /***/ (() => {
 
-window.addEventListener("load", function () {
+window.addEventListener("DOMContentLoaded", function () {
   (function hoverMenu() {
     var menuIcon = document.querySelector(".header__menu-icon");
     var shortBar = document.querySelector(".header__menu-icon__bar--short");

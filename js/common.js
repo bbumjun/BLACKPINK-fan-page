@@ -1,4 +1,4 @@
-window.addEventListener("load", ()=>{
+window.addEventListener("DOMContentLoaded", ()=>{
   (function hoverMenu() {
     const menuIcon = document.querySelector(".header__menu-icon");
     const shortBar = document.querySelector(".header__menu-icon__bar--short");
