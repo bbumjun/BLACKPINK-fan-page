@@ -63,12 +63,13 @@ var map = {
 	"./favicon.png": 4,
 	"./instagram-black.svg": 5,
 	"./instagram.svg": 6,
-	"./twitter-black.svg": 7,
-	"./twitter.svg": 8,
-	"./v-live-black.svg": 9,
-	"./v-live.svg": 10,
-	"./youtube-black.svg": 11,
-	"./youtube.svg": 12
+	"./noisy-texture-100x100.png": 7,
+	"./twitter-black.svg": 8,
+	"./twitter.svg": 9,
+	"./v-live-black.svg": 10,
+	"./v-live.svg": 11,
+	"./youtube-black.svg": 12,
+	"./youtube.svg": 13
 };
 
 
@@ -133,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/twitter-black.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/noisy-texture-100x100.png");
 
 /***/ }),
 /* 8 */
@@ -144,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/twitter.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/twitter-black.svg");
 
 /***/ }),
 /* 9 */
@@ -155,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/v-live-black.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/twitter.svg");
 
 /***/ }),
 /* 10 */
@@ -166,7 +167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/v-live.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/v-live-black.svg");
 
 /***/ }),
 /* 11 */
@@ -177,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/youtube-black.svg");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/v-live.svg");
 
 /***/ }),
 /* 12 */
@@ -188,14 +189,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/youtube-black.svg");
+
+/***/ }),
+/* 13 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "images/common/youtube.svg");
 
 /***/ }),
-/* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
-/* 17 */
+/* 17 */,
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -212,7 +224,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
   if ( true ) {
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-      __webpack_require__(18)
+      __webpack_require__(19)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( EvEmitter ) {
       return factory( window, EvEmitter );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -567,7 +579,7 @@ return ImagesLoaded;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -683,7 +695,6 @@ return EvEmitter;
 
 
 /***/ }),
-/* 19 */,
 /* 20 */,
 /* 21 */,
 /* 22 */,
@@ -700,18 +711,18 @@ return EvEmitter;
 /* 33 */,
 /* 34 */,
 /* 35 */,
-/* 36 */
+/* 36 */,
+/* 37 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37);
-/* harmony import */ var _scss_gallery_gallery_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
-/* harmony import */ var _images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _scss_gallery_gallery_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
+/* harmony import */ var _images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_3__);
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -729,29 +740,28 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
-
 __webpack_require__(3);
 
 __webpack_require__(40);
 
 function resizeGridItems() {
-  var items = document.querySelectorAll('.grid-item');
+  var items = document.querySelectorAll(".grid-item");
   items.forEach(function (item) {
-    imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(item, function (instance) {
+    imagesloaded__WEBPACK_IMPORTED_MODULE_3___default()(item, function (instance) {
       var item = instance.elements[0];
-      var grid = document.querySelector('.grid-container');
-      var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-      var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-      var rowSpan = Math.floor((item.querySelector('.content').offsetHeight + rowGap) / (rowHeight + rowGap));
+      var grid = document.querySelector(".grid-container");
+      var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-auto-rows"));
+      var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-row-gap"));
+      var rowSpan = Math.floor((item.querySelector(".content").offsetHeight + rowGap) / (rowHeight + rowGap));
       item.style.gridRowEnd = "span " + rowSpan;
-      item.style.backgroundColor = 'gray';
-      item.style.visibility = 'visible';
+      item.style.backgroundColor = "gray";
+      item.style.visibility = "visible";
     });
   });
-  var gallery = document.querySelector('.grid-container');
-  imagesloaded__WEBPACK_IMPORTED_MODULE_4___default()(gallery, function () {
-    document.querySelectorAll('.grid-item').forEach(function (item) {
-      return item.querySelector('img').style.visibility = 'visible';
+  var gallery = document.querySelector(".grid-container");
+  imagesloaded__WEBPACK_IMPORTED_MODULE_3___default()(gallery, function () {
+    document.querySelectorAll(".grid-item").forEach(function (item) {
+      return item.querySelector("img").style.visibility = "visible";
     });
   });
 }
@@ -759,7 +769,7 @@ function resizeGridItems() {
 function scrollHandler() {
   var debounce = null;
 
-  var imageSrcList = _toConsumableArray(_images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_3__.default);
+  var imageSrcList = _toConsumableArray(_images_gallery_image_list_js__WEBPACK_IMPORTED_MODULE_2__.default);
 
   return function () {
     clearTimeout(debounce);
@@ -771,57 +781,35 @@ function scrollHandler() {
       if (scrollTop + clientHeight >= scrollHeight - 100) {
         var lazyItems = imageSrcList.slice(0, 10);
         imageSrcList = imageSrcList.slice(10);
-        if (imageSrcList.length == 0) document.querySelector('.loader').style.display = 'none';
+        if (imageSrcList.length == 0) document.querySelector(".loader").style.display = "none";
 
         if (lazyItems.length) {
           lazyItems.forEach(function (item) {
-            var gridContainer = document.querySelector('.grid-container');
-            var newItem = document.createElement('div');
-            var image = document.createElement('img');
-            newItem.classList.add('grid-item');
+            var gridContainer = document.querySelector(".grid-container");
+            var newItem = document.createElement("div");
+            var image = document.createElement("img");
+            newItem.classList.add("grid-item");
             image.src = item;
-            image.alt = 'blackpink gallery';
-            image.classList.add('content');
+            image.alt = "blackpink gallery";
+            image.classList.add("content");
             newItem.appendChild(image);
             gridContainer.appendChild(newItem);
           });
           resizeGridItems();
         } else {
-          window.removeEventListener('scroll', scrollHandler);
+          window.removeEventListener("scroll", scrollHandler);
         }
       }
     }, 300);
   };
 }
 
-window.addEventListener('load', function () {
-  document.querySelector('.loader').style.display = 'flex';
+window.addEventListener("load", function () {
+  document.querySelector(".loader").style.display = "flex";
   resizeGridItems();
 });
-window.addEventListener('resize', resizeGridItems);
-window.addEventListener('scroll', scrollHandler());
-
-/***/ }),
-/* 37 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ loader)
-/* harmony export */ });
-function loader() {
-  var loader = document.createElement('div');
-  loader.classList.add('loader');
-
-  for (var i = 0; i < 3; i++) {
-    var dot = document.createElement('div');
-    dot.classList.add('dots');
-    loader.appendChild(dot);
-  }
-
-  return loader;
-}
+window.addEventListener("resize", resizeGridItems);
+window.addEventListener("scroll", scrollHandler());
 
 /***/ }),
 /* 38 */
@@ -1127,7 +1115,7 @@ __webpack_require__.r(__webpack_exports__);
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__(36);
+/******/ 	__webpack_require__(37);
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;

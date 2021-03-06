@@ -8,6 +8,7 @@ module.exports = {
     index: "./js/index.js",
     profile: "./js/profile.js",
     gallery: "./js/gallery.js",
+    discography: "./js/discography.js",
   },
   output: {
     filename: "[name].[contenthash:5].js",
@@ -68,6 +69,11 @@ module.exports = {
       template: "./html/gallery.html",
       filename: "./gallery.html",
       chunks: ["gallery"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./html/discography.html",
+      filename: "./discography.html",
+      chunks: ["discography"],
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({filename: "[name].css"}),
