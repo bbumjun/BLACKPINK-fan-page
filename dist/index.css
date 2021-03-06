@@ -230,8 +230,7 @@ a {
           .wrap .side-menu__sns-list li img:hover {
             transform: translateX(1.5rem); }
   .wrap .header {
-    position: -webkit-sticky;
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
