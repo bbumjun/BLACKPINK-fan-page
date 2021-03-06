@@ -35,11 +35,14 @@
         top:3vmax;
         bottom : 15vmax;
       }
+
       position: relative;
+
       img {
         visibility: hidden;
         width: 55vmin;
       }
+
       .name {
         font-size: 3rem;
         position: absolute;
@@ -67,7 +70,6 @@
 
         img {
           box-shadow: 15px 15px 20px gray;
-
         }
 
         .name {
