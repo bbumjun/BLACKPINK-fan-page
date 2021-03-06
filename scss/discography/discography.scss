@@ -1,0 +1,70 @@
+@import "../common/common.scss";
+
+@media screen and (max-width:1080px) {
+    html {
+        font-size: 5px;
+    }
+}
+
+.wrap {
+    background-color: #191414;
+    background-image: url(../../images/common/noisy-texture-100x100.png) ;
+
+    .header {
+        background-color: transparent;
+        position: static;
+    }
+    
+    #main-content {
+        display: grid;
+        margin: 0 auto;
+        max-width: 150rem;
+        grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+        grid-template-rows: repeat(auto-fit,minmax(40rem,1fr));
+        grid-auto-flow: row;
+        color : white;
+        padding: {
+            top:5rem;
+            bottom: 5rem;
+        };
+
+
+        @media screen and (max-width:1080px) {
+            
+            grid-template-columns: repeat(1,minmax(20rem,1fr));
+            grid-template-rows: repeat(auto-fit,minmax(50rem,1fr));
+
+
+        }
+        .title {
+            grid-column-end: span 2;
+            vertical-align:baseline;
+            @media screen and (max-width:1080px) {
+                grid-column-end: span 1;
+            }
+            margin: auto 0;
+            font-size: 8rem;
+        }
+        .sub-title {
+            margin: auto 0;
+            @media screen and (min-width:1080px) {
+                position: relative;
+                top:4rem;
+            }
+            font-size: 3.5rem;
+        }
+        .album {
+            
+            img {
+                width:100%;
+            }
+        }
+       
+    }
+    .footer {
+        @media screen and (max-width:1900px) {
+            display: none;
+            
+        }
+    }
+}
