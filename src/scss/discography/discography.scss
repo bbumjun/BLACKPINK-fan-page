@@ -1,0 +1,23 @@
+@import "../common/common";
+
+
+.wrap {
+  background-image: url(../../images/common/noisy-texture-100x100.png);
+
+  .header {
+    background-color: transparent;
+    position: static;
+  }
+
+  #main-content {
+   @import 'album-list';
+   @import 'album-info';
+
+  }
+
+  .footer {
+    @media screen and (max-width: 1900px) {
+      display: none;
+    }
+  }
+}

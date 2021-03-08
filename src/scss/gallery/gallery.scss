@@ -1,0 +1,52 @@
+@import '../common/common';
+
+.wrap {
+  background-image: url(../../images/common/noisy-texture-100x100.png);
+
+  .gallery {
+    .grid-container {
+      padding: {
+        top:5rem;
+        bottom: 5rem;
+      };
+
+      display: grid;
+      max-width: 100rem;
+      margin: 0 auto;
+      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 0.5rem;
+
+      @media screen and (max-width:1080px) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 90vmin;
+        
+      }
+      .title {
+        color: white;
+        @media screen and (min-width:1080px) {
+          grid-column-end: span 4;
+          grid-row-end: span 5;
+          font-size: 8rem;
+        }
+        @media screen and (max-width:1079px) {
+          grid-column-end: span 2;;
+          grid-row-end: span 3;
+          font-size: 4rem;
+        }
+      }
+      .grid-item {
+        border-radius: 2rem;
+        overflow: hidden;
+        visibility: collapse;
+      }
+
+      img {
+        width: 100%;
+        visibility: hidden;
+      }
+    }
+
+    @import '../common/loader';
+  }
+}

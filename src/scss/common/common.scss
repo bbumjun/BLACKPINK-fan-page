@@ -1,0 +1,45 @@
+
+@import './reset';
+
+@font-face {
+  font-family: primetime;
+  src: url('../../fonts/Primetime.ttf');
+}
+
+@font-face {
+  font-family: primetime;
+  src: url('../../fonts/NotoSansKR-Black.otf');
+  unicode-range: U+0030-0039;
+}
+
+html {
+  font: {
+    size:10px;
+    family: primetime, monospace;
+  }
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrap {
+  position: relative;
+  min-height: 100vh;
+
+  @import "./side-menu";
+  @import "./header";
+  @import "./footer";
+}

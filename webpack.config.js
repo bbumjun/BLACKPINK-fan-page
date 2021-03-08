@@ -5,10 +5,10 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
-    index: "./js/index.js",
-    profile: "./js/profile.js",
-    gallery: "./js/gallery.js",
-    discography: "./js/discography.js",
+    index: "./src/js/index.js",
+    profile: "./src/js/profile.js",
+    gallery: "./src/js/gallery.js",
+    discography: "./src/js/discography.js",
   },
   output: {
     filename: "[name].[contenthash:5].js",
@@ -62,22 +62,22 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./html/index.html",
+      template: "./src/html/index.html",
       filename: "./index.html",
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
-      template: "./html/profile.html",
+      template: "./src/html/profile.html",
       filename: "./profile.html",
       chunks: ["profile"],
     }),
     new HtmlWebpackPlugin({
-      template: "./html/gallery.html",
+      template: "./src/html/gallery.html",
       filename: "./gallery.html",
       chunks: ["gallery"],
     }),
     new HtmlWebpackPlugin({
-      template: "./html/discography.html",
+      template: "./src/html/discography.html",
       filename: "./discography.html",
       chunks: ["discography"],
     }),
