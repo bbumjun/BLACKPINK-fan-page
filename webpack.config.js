@@ -31,10 +31,16 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"],
+        use: 
+        [
+          {loader : MiniCssExtractPlugin.loader},
+          {loader : "css-loader"},
+          {loader : "postcss-loader", options: {
+            sourceMap:true
+          }},{loader : "sass-loader", options: {
+            sourceMap:true
+          }}
+        ]
       },
       {
         test: /\.(png|jpeg|jpg|gif|svg|webp)$/i,
