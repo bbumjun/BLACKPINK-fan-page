@@ -10,9 +10,14 @@
   }
 
   #main-content {
+    max-width: 150rem;
+    margin: 0 auto;
    @import 'album-list';
    @import 'album-info';
-
+  
+   @media screen and(max-width:1079px) {
+     padding: 1rem;
+   }
   }
 
   .footer {

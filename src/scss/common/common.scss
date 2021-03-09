@@ -17,6 +17,9 @@ html {
     size:10px;
     family: primetime, monospace;
   }
+  @media screen and  (max-width: 1079px) {
+    font-size: 7px;
+  }
 }
 
 body,
