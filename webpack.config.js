@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
   entry: {
     index: "./src/js/index.js",
@@ -33,7 +34,7 @@ module.exports = {
         test: /\.scss$/,
         use: 
         [
-          {loader : MiniCssExtractPlugin.loader},
+          {loader :MiniCssExtractPlugin.loader},
           {loader : "css-loader"},
           {loader : "postcss-loader", options: {
             sourceMap:true
@@ -46,14 +47,14 @@ module.exports = {
         test: /\.(png|jpeg|jpg|gif|svg|webp)$/i,
         loader: "file-loader",
         options: {
-          name: "[path][name].[ext]",
+          name: "assets/[name].[ext]",
         },
       },
       {
         test: /\.(ttf|woff|otf)$/,
         loader: "url-loader",
         options: {
-          name: "[path][name].[ext]",
+          name: "assets/[name].[ext]",
           limit: 20000,
         },
       },
@@ -89,5 +90,6 @@ module.exports = {
     contentBase: "./dist/",
     publicPath: "/",
     open: true,
+    hot:true,
   },
 };
