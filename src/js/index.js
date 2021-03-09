@@ -5,7 +5,7 @@ require.context("../images/index", true);
 
 (function loadBgImg() {
   const bgImg = new Image();
-  bgImg.src = "src/images/index/background.jpg";
+  bgImg.src = "assets/background.jpg";
   bgImg.onload = ()=>{
     document.querySelector(".background")
         .style
