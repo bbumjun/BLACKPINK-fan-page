@@ -124,11 +124,11 @@ table {
 
 @font-face {
   font-family: primetime;
-  src: url(./assets/Primetime.ttf); }
+  src: url(./fonts/Primetime.ttf); }
 
 @font-face {
   font-family: primetime;
-  src: url(./assets/NotoSansKR-Black.otf);
+  src: url(./fonts/NotoSansKR-Black.otf);
   unicode-range: U+0030-0039; }
 
 html {

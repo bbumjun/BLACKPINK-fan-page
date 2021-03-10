@@ -18,35 +18,39 @@
 }
 
 #member-profile {
-  
+
   padding: {
     top:5rem;
     bottom: 5rem;
   }
-  @media screen and(max-width:1079px) {
-    margin-left:2.5%;
+
+  @media screen and(max-width: 1079px) {
+    margin-left: 2.5%;
     margin-right: 2.5%;
   }
+
   max-width: 100rem;
   margin: 0 auto;
+
   .title {
     color: white;
-    @media screen and (min-width:1080px) {
+
+    @media screen and (min-width: 1080px) {
       font-size: 8rem;
     }
-    @media screen and (max-width:1080px) {
+
+    @media screen and (max-width: 1080px) {
       font-size: 4rem;
     }
   }
+
   .member-list {
     overflow: auto;
     display: flex;
     flex-direction: column;
 
-
     li {
-     margin: 5rem 0;
-
+      margin: 5rem 0;
       position: relative;
 
       img {

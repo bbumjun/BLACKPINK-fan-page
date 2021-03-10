@@ -25,6 +25,4 @@ window.addEventListener("DOMContentLoaded", ()=>{
       nav.style.setProperty("height", "0%");
     });
   })();
-
-
 });

@@ -17,24 +17,27 @@
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 0.5rem;
 
-      @media screen and (max-width:1080px) {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 90vmin;
-        
+      @media screen and (max-width: 1080px) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90vmin;
       }
+
       .title {
         color: white;
-        @media screen and (min-width:1080px) {
+
+        @media screen and (min-width: 1080px) {
           grid-column-end: span 4;
           grid-row-end: span 5;
           font-size: 8rem;
         }
-        @media screen and (max-width:1079px) {
-          grid-column-end: span 2;;
+
+        @media screen and (max-width: 1079px) {
+          grid-column-end: span 2;
           grid-row-end: span 3;
           font-size: 4rem;
         }
       }
+
       .grid-item {
         border-radius: 2rem;
         overflow: hidden;

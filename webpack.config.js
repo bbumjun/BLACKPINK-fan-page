@@ -6,10 +6,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    index: "./src/js/index.js",
-    profile: "./src/js/profile.js",
-    gallery: "./src/js/gallery.js",
-    discography: "./src/js/discography.js",
+    index: "./js/index.js",
+    profile: "./js/profile.js",
+    gallery: "./js/gallery.js",
+    discography: "./js/discography.js",
   },
   output: {
     filename: "[name].[contenthash:5].js",
@@ -32,29 +32,29 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: 
+        use:
         [
-          {loader :MiniCssExtractPlugin.loader},
-          {loader : "css-loader"},
-          {loader : "postcss-loader", options: {
-            sourceMap:true
-          }},{loader : "sass-loader", options: {
-            sourceMap:true
-          }}
-        ]
+          {loader: MiniCssExtractPlugin.loader},
+          {loader: "css-loader"},
+          {loader: "postcss-loader", options: {
+            sourceMap: true,
+          }}, {loader: "sass-loader", options: {
+            sourceMap: true,
+          }},
+        ],
       },
       {
         test: /\.(png|jpeg|jpg|gif|svg|webp)$/i,
         loader: "file-loader",
         options: {
-          name: "assets/[name].[ext]",
+          name: "[path][name].[ext]",
         },
       },
       {
         test: /\.(ttf|woff|otf)$/,
         loader: "url-loader",
         options: {
-          name: "assets/[name].[ext]",
+          name: "[path][name].[ext]",
           limit: 20000,
         },
       },
@@ -63,22 +63,22 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/html/index.html",
+      template: "./html/index.html",
       filename: "./index.html",
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/html/profile.html",
+      template: "./html/profile.html",
       filename: "./profile.html",
       chunks: ["profile"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/html/gallery.html",
+      template: "./html/gallery.html",
       filename: "./gallery.html",
       chunks: ["gallery"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/html/discography.html",
+      template: "./html/discography.html",
       filename: "./discography.html",
       chunks: ["discography"],
     }),
@@ -90,6 +90,6 @@ module.exports = {
     contentBase: "./dist/",
     publicPath: "/",
     open: true,
-    hot:true,
+    hot: true,
   },
 };

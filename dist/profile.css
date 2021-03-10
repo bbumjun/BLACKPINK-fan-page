@@ -124,11 +124,11 @@ table {
 
 @font-face {
   font-family: primetime;
-  src: url(./assets/Primetime.ttf); }
+  src: url(./fonts/Primetime.ttf); }
 
 @font-face {
   font-family: primetime;
-  src: url(./assets/NotoSansKR-Black.otf);
+  src: url(./fonts/NotoSansKR-Black.otf);
   unicode-range: U+0030-0039; }
 
 html {
@@ -335,7 +335,7 @@ a {
                     transform: translateX(1.5rem); }
 
 .wrap {
-  background-image: url(./assets/noisy-texture-100x100.png); }
+  background-image: url(./images/common/noisy-texture-100x100.png); }
   .wrap #member-profile {
     padding-top: 5rem;
     padding-bottom: 5rem;

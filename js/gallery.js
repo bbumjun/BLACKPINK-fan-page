@@ -1,7 +1,7 @@
 import "./common";
 import "../scss/gallery/gallery.scss";
 import imagesLoaded from "imagesloaded";
-import {serverUrl} from './config'
+import {serverUrl} from "./config";
 require.context("../images/common", true);
 require.context("../images/gallery", true);
 
@@ -36,28 +36,30 @@ function scrollHandler() {
       const clientHeight = document.documentElement.clientHeight;
       if (scrollTop + clientHeight >= scrollHeight - 100) {
         fetch(`${serverUrl}/gallery/pictures/${fetchIdx}`)
-        .then(res=> res.json())
-        .then(({srcList})=>{
-          if(srcList.length == 0 ) {
-            document.querySelector(".loader").style.display = "none";
-            window.removeEventListener("scroll", scrollHandler);
-          } else {
-            fetchIdx += srcList.length
-            srcList.forEach((src) => {
-              const gridContainer = document.querySelector(".grid-container");
-              const newItem = document.createElement("div");
-              const image = document.createElement("img");
-              newItem.classList.add("grid-item");
-              image.src = src;
-              image.alt = "blackpink gallery";
-              image.classList.add("content");
-              newItem.appendChild(image);
-              gridContainer.appendChild(newItem);
+            .then((res)=> res.json())
+            .then(({srcList})=>{
+              if (srcList.length == 0 ) {
+                document.querySelector(".loader").style.display = "none";
+                window.removeEventListener("scroll", scrollHandler);
+              } else {
+                fetchIdx += srcList.length;
+                srcList.forEach((src) => {
+                  const gridContainer = document.querySelector(".grid-container");
+                  const newItem = document.createElement("div");
+                  const image = document.createElement("img");
+                  newItem.classList.add("grid-item");
+                  image.src = src;
+                  image.alt = "blackpink gallery";
+                  image.classList.add("content");
+                  newItem.appendChild(image);
+                  gridContainer.appendChild(newItem);
+                });
+                resizeGridItems();
+              }
+            })
+            .catch((err)=>{
+              console.log(err);
             });
-            resizeGridItems();
-          }
-        })
-        .catch(err=>{console.log(err)})
       }
     }, 300);
   };
@@ -67,4 +69,4 @@ window.addEventListener("load", () => {
   resizeGridItems();
 });
 window.addEventListener("resize", resizeGridItems);
-window.addEventListener('scroll',scrollHandler())
+window.addEventListener("scroll", scrollHandler());

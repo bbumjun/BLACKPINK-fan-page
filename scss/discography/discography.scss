@@ -1,6 +1,5 @@
 @import "../common/common";
 
-
 .wrap {
   background-image: url(../../images/common/noisy-texture-100x100.png);
 
@@ -12,12 +11,13 @@
   #main-content {
     max-width: 150rem;
     margin: 0 auto;
-   @import 'album-list';
-   @import 'album-info';
-  
-   @media screen and(max-width:1079px) {
-     padding: 1rem;
-   }
+
+    @import 'album-list';
+    @import 'album-info';
+
+    @media screen and(max-width: 1079px) {
+      padding: 1rem;
+    }
   }
 
   .footer {
