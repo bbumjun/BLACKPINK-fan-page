@@ -154,69 +154,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 /* 14 */,
 /* 15 */,
-/* 16 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_profile_profile_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-
-__webpack_require__(3);
-
-__webpack_require__(20);
-
-window.addEventListener("load", function () {
-  (function slideProfile() {
-    var options = {
-      threshold: 0.8
-    };
-    var io = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      });
-    }, options);
-    var names = document.querySelectorAll(".member .name");
-    var details = document.querySelectorAll(".member .detail");
-    names.forEach(function (name) {
-      io.observe(name);
-    });
-    details.forEach(function (detail) {
-      io.observe(detail);
-    });
-  })();
-});
-
-(function loadImages() {
-  var images = document.querySelectorAll(".member img");
-  images.forEach(function (image) {
-    imagesloaded__WEBPACK_IMPORTED_MODULE_2___default()(image, function () {
-      image.style.visibility = "visible";
-    });
-  });
-})();
-
-/***/ }),
-/* 17 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
+/* 16 */,
+/* 17 */,
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -705,26 +644,154 @@ return EvEmitter;
 
 
 /***/ }),
-/* 20 */
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_gallery_gallery_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
+
+
+
+
+
+__webpack_require__(3);
+
+__webpack_require__(40);
+
+function resizeGridItems() {
+  var items = document.querySelectorAll(".grid-item");
+  items.forEach(function (item) {
+    imagesloaded__WEBPACK_IMPORTED_MODULE_2___default()(item, function (instance) {
+      var item = instance.elements[0];
+      var grid = document.querySelector(".grid-container");
+      var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-auto-rows"));
+      var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-row-gap"));
+      var rowSpan = Math.floor((item.querySelector(".content").offsetHeight + rowGap) / (rowHeight + rowGap));
+      item.style.gridRowEnd = "span " + rowSpan;
+      item.style.backgroundColor = "gray";
+      item.style.visibility = "visible";
+    });
+  });
+  var gallery = document.querySelector(".grid-container");
+  imagesloaded__WEBPACK_IMPORTED_MODULE_2___default()(gallery, function () {
+    document.querySelectorAll(".grid-item").forEach(function (item) {
+      return item.querySelector("img").style.visibility = "visible";
+    });
+  });
+}
+
+function scrollHandler() {
+  var debounce = null;
+  var fetchIdx = 0;
+  return function () {
+    clearTimeout(debounce);
+    debounce = setTimeout(function () {
+      var scrollHeight = document.documentElement.scrollHeight;
+      var scrollTop = document.documentElement.scrollTop;
+      var clientHeight = document.documentElement.clientHeight;
+
+      if (scrollTop + clientHeight >= scrollHeight - 100) {
+        fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_3__.serverUrl, "/gallery/pictures/").concat(fetchIdx)).then(function (res) {
+          return res.json();
+        }).then(function (_ref) {
+          var srcList = _ref.srcList;
+
+          if (srcList.length == 0) {
+            document.querySelector(".loader").style.display = "none";
+            window.removeEventListener("scroll", scrollHandler);
+          } else {
+            fetchIdx += srcList.length;
+            srcList.forEach(function (src) {
+              var gridContainer = document.querySelector(".grid-container");
+              var newItem = document.createElement("div");
+              var image = document.createElement("img");
+              newItem.classList.add("grid-item");
+              image.src = src;
+              image.alt = "blackpink gallery";
+              image.classList.add("content");
+              newItem.appendChild(image);
+              gridContainer.appendChild(newItem);
+            });
+            resizeGridItems();
+          }
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
+    }, 300);
+  };
+}
+
+window.addEventListener("load", function () {
+  document.querySelector(".loader").style.display = "flex";
+  resizeGridItems();
+});
+window.addEventListener("resize", resizeGridItems);
+window.addEventListener("scroll", scrollHandler());
+
+/***/ }),
+/* 38 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+/* 39 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "serverUrl": function() { return /* binding */ serverUrl; }
+/* harmony export */ });
+var serverUrl = "https://blackpink-fan-page.herokuapp.com";
+
+/***/ }),
+/* 40 */
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
-	"./jennie-1080.jpg": 21,
-	"./jennie-1080.webp": 22,
-	"./jennie-400.jpg": 23,
-	"./jennie-400.webp": 24,
-	"./jisoo-1080.jpg": 25,
-	"./jisoo-1080.webp": 26,
-	"./jisoo-400.jpg": 27,
-	"./jisoo-400.webp": 28,
-	"./lisa-1080.jpg": 29,
-	"./lisa-1080.webp": 30,
-	"./lisa-400.jpg": 31,
-	"./lisa-400.webp": 32,
-	"./rose-1080.jpg": 33,
-	"./rose-1080.webp": 34,
-	"./rose-400.jpg": 35,
-	"./rose-400.webp": 36
+	"./gallery-1.jpg": 41,
+	"./gallery-10.jpg": 42,
+	"./gallery-11.jpg": 43,
+	"./gallery-12.jpg": 44,
+	"./gallery-13.jpg": 45,
+	"./gallery-14.jpg": 46,
+	"./gallery-15.jpg": 47,
+	"./gallery-2.jpg": 48,
+	"./gallery-3.jpg": 49,
+	"./gallery-4.jpg": 50,
+	"./gallery-5.jpg": 51,
+	"./gallery-6.jpg": 52,
+	"./gallery-7.jpg": 53,
+	"./gallery-8.jpg": 54,
+	"./gallery-9.jpg": 55
 };
 
 
@@ -745,135 +812,127 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 20;
+webpackContext.id = 40;
 
 /***/ }),
-/* 21 */
+/* 41 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jennie-1080.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-1.jpg");
 
 /***/ }),
-/* 22 */
+/* 42 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jennie-1080.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-10.jpg");
 
 /***/ }),
-/* 23 */
+/* 43 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jennie-400.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-11.jpg");
 
 /***/ }),
-/* 24 */
+/* 44 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jennie-400.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-12.jpg");
 
 /***/ }),
-/* 25 */
+/* 45 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jisoo-1080.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-13.jpg");
 
 /***/ }),
-/* 26 */
+/* 46 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jisoo-1080.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-14.jpg");
 
 /***/ }),
-/* 27 */
+/* 47 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jisoo-400.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-15.jpg");
 
 /***/ }),
-/* 28 */
+/* 48 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/jisoo-400.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-2.jpg");
 
 /***/ }),
-/* 29 */
+/* 49 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/lisa-1080.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-3.jpg");
 
 /***/ }),
-/* 30 */
+/* 50 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/lisa-1080.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-4.jpg");
 
 /***/ }),
-/* 31 */
+/* 51 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/lisa-400.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-5.jpg");
 
 /***/ }),
-/* 32 */
+/* 52 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/lisa-400.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-6.jpg");
 
 /***/ }),
-/* 33 */
+/* 53 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/rose-1080.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-7.jpg");
 
 /***/ }),
-/* 34 */
+/* 54 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/rose-1080.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-8.jpg");
 
 /***/ }),
-/* 35 */
+/* 55 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/rose-400.jpg");
-
-/***/ }),
-/* 36 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/profile/rose-400.webp");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/gallery/gallery-9.jpg");
 
 /***/ })
 /******/ 	]);
@@ -950,7 +1009,7 @@ __webpack_require__.r(__webpack_exports__);
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__(16);
+/******/ 	__webpack_require__(37);
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;

@@ -1,39 +1,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ([
-/* 0 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_index_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-__webpack_require__(3);
-
-__webpack_require__(14);
-
-(function loadBgImg() {
-  var bgImg = new Image();
-  bgImg.src = "../images/index/background.jpg";
-
-  bgImg.onload = function () {
-    document.querySelector(".background").style.backgroundImage = "url(".concat(bgImg.src, ")");
-  };
-})();
-
-/***/ }),
-/* 1 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
+/* 0 */,
+/* 1 */,
 /* 2 */
 /***/ (function() {
 
@@ -184,11 +152,126 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/common/youtube.svg");
 
 /***/ }),
-/* 14 */
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "serverUrl": function() { return /* binding */ serverUrl; }
+/* harmony export */ });
+var serverUrl = "https://blackpink-fan-page.herokuapp.com";
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_common__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_discography_discography_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
+
+
+
+
+__webpack_require__(3);
+
+__webpack_require__(58);
+
+window.addEventListener("load", function () {
+  var albumList = document.querySelector("#album-list");
+  albumList.addEventListener("click", function (_ref) {
+    var target = _ref.target;
+    var container = document.querySelector("#album-info");
+    container.style.display = "block";
+
+    if (target.dataset.id) {
+      fetch("".concat(_config__WEBPACK_IMPORTED_MODULE_2__.serverUrl, "/gallery/album-info/").concat(target.dataset.id)).then(function (res) {
+        return res.json();
+      }).then(function (_ref2) {
+        var albumInfo = _ref2.albumInfo;
+        var coverImage = container.querySelector(".album-info__detail__cover img");
+        var title = container.querySelector(".album-info__detail__container__description__title");
+        var description = container.querySelector(".album-info__detail__container__description__text");
+        var video = container.querySelector(".album-info__detail__container__video iframe");
+        coverImage.src = albumInfo.coverImageSrc;
+        video.src = albumInfo.videoSrc;
+        title.textContent = albumInfo.title;
+        description.textContent = albumInfo.text;
+        window.scrollTo({
+          top: container.offsetTop,
+          left: 0,
+          behavior: "smooth"
+        });
+      });
+    }
+  });
+});
+
+/***/ }),
+/* 57 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+/* 58 */
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
-	"./background.jpg": 15
+	"./as-if-its-your-last.png": 59,
+	"./how-you-like-that.jpg": 60,
+	"./kill-this-love.jpg": 61,
+	"./square-one.jpg": 62,
+	"./square-two.png": 63,
+	"./square-up.png": 64,
+	"./the-album.png": 65
 };
 
 
@@ -209,15 +292,63 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 14;
+webpackContext.id = 58;
 
 /***/ }),
-/* 15 */
+/* 59 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/index/background.jpg");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/as-if-its-your-last.png");
+
+/***/ }),
+/* 60 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/how-you-like-that.jpg");
+
+/***/ }),
+/* 61 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/kill-this-love.jpg");
+
+/***/ }),
+/* 62 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/square-one.jpg");
+
+/***/ }),
+/* 63 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/square-two.png");
+
+/***/ }),
+/* 64 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/square-up.png");
+
+/***/ }),
+/* 65 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "images/discography/the-album.png");
 
 /***/ })
 /******/ 	]);
@@ -294,7 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__(0);
+/******/ 	__webpack_require__(56);
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;

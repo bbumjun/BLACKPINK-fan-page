@@ -28,6 +28,9 @@
     }
 
     &__cover {
+    @media screen and (min-width: 1080px) {
+      width: 25vw;
+    }
       img {
         width: 100%;
         position: sticky;
