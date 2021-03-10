@@ -1,6 +1,7 @@
 import "./common";
 import "../scss/gallery/gallery.scss";
 import imagesLoaded from "imagesloaded";
+import {serverUrl} from './config'
 require.context("../images/common", true);
 require.context("../images/gallery", true);
 
@@ -34,7 +35,7 @@ function scrollHandler() {
       const scrollTop = document.documentElement.scrollTop;
       const clientHeight = document.documentElement.clientHeight;
       if (scrollTop + clientHeight >= scrollHeight - 100) {
-        fetch(`http://localhost:3001/gallery/pictures/${fetchIdx}`)
+        fetch(`${serverUrl}/gallery/pictures/${fetchIdx}`)
         .then(res=> res.json())
         .then(({srcList})=>{
           if(srcList.length == 0 ) {

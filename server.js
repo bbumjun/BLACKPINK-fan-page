@@ -18,7 +18,7 @@ app.get('/gallery/pictures/:index',(req,res)=>{
 
 app.get('/gallery/album-info/:id',(req,res)=>{
     const id = Number(req.params.id)
-    res.json({"albumInfo" : info.filter(albumInfo=>albumInfo.id===id)[0]})
+    res.json({albumInfo : info.filter(albumInfo=>albumInfo.id===id)[0]})
 })
 app.listen(port,()=>{
     console.log(`server is listening at ${port} port`)
