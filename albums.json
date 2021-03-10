@@ -1,0 +1,55 @@
+{
+    "info" : [
+        {
+            "id" : 0,
+            "title": "Square One",
+            "text":  "Square One (stylized in all caps) is the debut single album by South Korean girl group Blackpink. It was released digitally on August 8, 2016 by YG Entertainment and distributed by KT Music. The lyrics were written by Teddy Park, Bekuh Boom and iKON's B.I while the music was composed by Teddy Park, Future Bounce and Bekuh Boom.",
+            "coverImageSrc" : "assets/square-one.jpg",
+            "videoSrc" : "https://www.youtube.com/embed/bwmSjveL3Lc"
+        },
+        {
+            "id": 1,
+            "title":"Square Two",
+            "text":"Square Two (stylized in all caps) is the second single album by South Korean girl group Blackpink. It was released as a digital single on November 1, 2016 by YG Entertainment and distributed by KT Music. The single has a double A-side, \"Playing with Fire\" and \"Stay\" as well as an acoustic version of \"Whistle\". The lyrics were written by Teddy Park and the music was composed by Teddy Park, R.Tee and Seo Won-jin.",
+            "coverImageSrc":"assets/square-two.png",
+            "videoSrc":"https://www.youtube.com/embed/9pdj4iJD08s"
+        },
+        {
+            "id": 2,
+            "title":"As If It's Your Last",
+            "text":"\"As If It's Your Last\" (Korean: 마지막처럼) is the first digital single by BLACKPINK. The single and its music video were released on June 22, 2017.",
+            "coverImageSrc":"assets/as-if-its-your-last.png",
+            "videoSrc":"https://www.youtube.com/embed/Amq-qlqbjYA"
+        },        {
+            "id": 3,
+            "title":"Square Up",
+            "text":"Square Up (stylized in all caps) is the first Korean extended play (second overall) by South Korean girl group Blackpink. It was released on June 15, 2018 by YG Entertainment. It is available in two versions and contains four tracks, with \"Ddu-Du Ddu-Du\" released as the lead single. Upon its release, Square Up debuted at the top spot of the Gaon Albums Chart and went on to sell almost 179,000 copies on its first fifteen days of release in South Korea. The EP also debuted at number 40 on the US Billboard 200, becoming Blackpink's third highest selling album in a Western market as well as the third highest-charting to date by an all-female K-pop group.",
+            "coverImageSrc":"assets/square-up.png",
+            "videoSrc":"https://www.youtube.com/embed/IHNzOHi8sJs"
+        },        {
+            "id": 4,
+            "title":"Kill This Love",
+            "text": "Kill This Love (stylized in all caps) is the second Korean-language extended play (third overall) by South Korean girl group Blackpink, released on April 5, 2019, by YG Entertainment and Interscope Records. It is their first Korean material since the release of Square Up in June 2018, and their debut release with Interscope Records. The title track was released as the lead single. The single peaked at number two in South Korea and became the group's first top-50 hit in the United States and the United Kingdom. On the Billboard 200 chart, Kill This Love debuted at number twenty four with 19,200 units, including over 9,100 pure sales moved. The EP reached the top ten in many territories, including Canada, Japan, New Zealand and South Korea, and the top twenty in Australia. It was certified platinum by the Gaon Music Chart in June 2019, for selling 250,000 album-equivalent units becoming Blackpink's second EP to do so, following 2018's Square Up.",
+            "coverImageSrc":"assets/kill-this-love.jpg",
+            "videoSrc":"https://www.youtube.com/embed/2S24-y0Ij3Y"
+        },        {
+            "id": 5,
+            "title":"How You Like That",
+            "text":"How You Like That is the first single album by BLACKPINK. The single and its music video was released on June 26, 2020 as the first pre-release single from the group's first studio album, The Album, which was released on October 2, 2020. Teddy co-wrote the track with Danny Chung, and its producers R. Tee and 24.",
+            "coverImageSrc":"assets/how-you-like-that.jpg",
+            "videoSrc":"https://www.youtube.com/embed/ioNng23DkIM"
+        },        {
+            "id": 6,
+            "title":"Ice Cream",
+            "text":"Ice Cream is a collaboration between BLACKPINK and Selena Gomez. It was released on August 28, 2020. It serves as the second pre-release single and the second track of BLACKPINK's debut Korean studio album, The Album.",
+            "coverImageSrc":"https://www.ygfamily.com/upload/artists/album/260260/33.png",
+            "videoSrc":"https://www.youtube.com/embed/vRXZj0DzXIA"
+        },        {
+            "id": 7,
+            "title":"The Album",
+            "text":"The Album (stylized in all uppercase and alternatively titled BLΛƆKPIИK The Album) is the first Korean studio album and second album overall by BLACKPINK. It was released on October, 2, 2020, with \"Lovesick Girls\" serving as the title track. \"How You Like That\" and \"Ice Cream\" were released as pre-released singles.",
+            "coverImageSrc":"assets/the-album.png",
+            "videoSrc":"https://www.youtube.com/embed/dyRsYk0LyA8"
+        }
+    ]
+}
