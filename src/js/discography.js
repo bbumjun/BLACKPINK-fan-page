@@ -21,7 +21,7 @@ window.addEventListener('load',()=>{
                 video.src = albumInfo.videoSrc
                 title.textContent = albumInfo.title
                 description.textContent = albumInfo.text
-                window.scrollTo({top:container.getBoundingClientRect().top,behavior:'smooth'})
+                window.scrollTo({top:container.offsetTop,left:0,behavior:'smooth'})
             })
         }
     })
