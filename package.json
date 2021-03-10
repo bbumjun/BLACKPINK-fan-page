@@ -9,7 +9,8 @@
     "build": "webpack",
     "dev": "webpack serve",
     "eslint": "eslint . --fix",
-    "stylelint": "stylelint \"**/*.scss\" --fix"
+    "stylelint": "stylelint \"**/*.scss\" --fix",
+    "server": "nodemon server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
