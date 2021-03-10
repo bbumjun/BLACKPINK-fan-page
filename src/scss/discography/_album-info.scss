@@ -55,12 +55,10 @@
             }
             &__video {
                 @media screen and(min-width:1080px) {
-                    width:55vw;
-                    height: 30vw;
+                    height: 60vh;
                 }
                 @media screen and (max-width:1079px)  {
-                    width: 90vw;
-                    height: 50vw;
+                    height: 30vh;
                 }
                 iframe {
                     width: 100%;
