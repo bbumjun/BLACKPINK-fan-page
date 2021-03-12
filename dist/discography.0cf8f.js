@@ -237,10 +237,21 @@ window.addEventListener("load", function () {
         var title = container.querySelector(".album-info__detail__container__description__title");
         var description = container.querySelector(".album-info__detail__container__description__text");
         var video = container.querySelector(".album-info__detail__container__video iframe");
+        var relatedImages = container.querySelector('.album-info__detail__container__relative-images');
         coverImage.src = albumInfo.coverImageSrc;
         video.src = albumInfo.videoSrc;
         title.textContent = albumInfo.title;
         description.textContent = albumInfo.text;
+        relatedImages.querySelectorAll('*').forEach(function (child) {
+          return child.remove();
+        });
+        albumInfo.relatedImages.map(function (imgSrc) {
+          var img = new Image();
+          img.src = imgSrc;
+          return img;
+        }).forEach(function (imgElement) {
+          relatedImages.appendChild(imgElement);
+        });
         window.scrollTo({
           top: container.offsetTop,
           left: 0,
