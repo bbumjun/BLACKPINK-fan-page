@@ -430,17 +430,16 @@ a {
             -webkit-box-align: center;
                 -ms-flex-align: center;
                     align-items: center; } }
-        @media screen and (min-width: 1080px) {
-          .wrap #main-content .album-info__detail__cover {
-            width: 30vw; } }
-        .wrap #main-content .album-info__detail__cover img {
-          width: 100%;
-          position: sticky;
-          top: 2rem; }
-        @media screen and (min-width: 1080px) {
-          .wrap #main-content .album-info__detail__cover {
-            max-width: 30vw;
-            margin-right: 2rem; } }
+        .wrap #main-content .album-info__detail__cover {
+          width: 100%; }
+          @media screen and (min-width: 1080px) {
+            .wrap #main-content .album-info__detail__cover {
+              width: 30vw;
+              padding-right: 2rem; } }
+          .wrap #main-content .album-info__detail__cover img {
+            width: 100%;
+            position: sticky;
+            top: 2rem; }
         .wrap #main-content .album-info__detail__container {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -448,11 +447,13 @@ a {
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
               -ms-flex-flow: column;
-                  flex-flow: column; }
+                  flex-flow: column;
+          width: 100%;
+          height: 100%; }
           @media screen and (min-width: 1080px) {
             .wrap #main-content .album-info__detail__container {
               border-left: 0.1rem rgba(255, 255, 255, 0.425) solid;
-              padding: 2rem; } }
+              padding-left: 2rem; } }
           .wrap #main-content .album-info__detail__container__description__title {
             font-size: 6rem; }
           .wrap #main-content .album-info__detail__container__description__text {
@@ -460,20 +461,26 @@ a {
             font-size: 4rem;
             padding: 3rem 0;
             line-height: 150%; }
-          @media screen and (min-width: 1080px) {
-            .wrap #main-content .album-info__detail__container__video {
-              width: 50vw;
-              height: 33.75vw; } }
-          @media screen and (max-width: 1079px) {
-            .wrap #main-content .album-info__detail__container__video {
-              width: 80vw;
-              height: 45vw; } }
-          .wrap #main-content .album-info__detail__container__video iframe {
+          .wrap #main-content .album-info__detail__container__video {
+            -ms-flex-item-align: center;
+                align-self: center;
+            position: relative;
+            border-top: 0.1rem rgba(255, 255, 255, 0.425) solid;
             width: 100%;
-            height: 100%; }
+            padding-top: 56.25%; }
+            .wrap #main-content .album-info__detail__container__video iframe {
+              position: absolute;
+              left: 0;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 100%; }
           .wrap #main-content .album-info__detail__container__relative-images {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); }
+            grid-template-columns: repeat(2, 1fr);
+            padding-top: 2rem;
+            border-top: 0.1rem rgba(255, 255, 255, 0.425) solid; }
             .wrap #main-content .album-info__detail__container__relative-images img {
               width: 100%; }
   @media screen and (max-width: 1900px) {
