@@ -53,6 +53,9 @@
       &__description {
         &__title {
           font-size: 6rem;
+          @media screen and(max-width:1079px) {
+            font-size: 4rem;
+          }
         }
 
         &__text {
@@ -60,7 +63,9 @@
           font-size: 4rem;
           padding: 3rem 0;
           line-height: 150%;
-
+          @media screen and(max-width:1079px) {
+            font-size: 2rem;
+          }
         }
       }
 

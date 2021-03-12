@@ -456,11 +456,17 @@ a {
               padding-left: 2rem; } }
           .wrap #main-content .album-info__detail__container__description__title {
             font-size: 6rem; }
+            @media screen and (max-width: 1079px) {
+              .wrap #main-content .album-info__detail__container__description__title {
+                font-size: 4rem; } }
           .wrap #main-content .album-info__detail__container__description__text {
             max-width: 80rem;
             font-size: 4rem;
             padding: 3rem 0;
             line-height: 150%; }
+            @media screen and (max-width: 1079px) {
+              .wrap #main-content .album-info__detail__container__description__text {
+                font-size: 2rem; } }
           .wrap #main-content .album-info__detail__container__video {
             -ms-flex-item-align: center;
                 align-self: center;
