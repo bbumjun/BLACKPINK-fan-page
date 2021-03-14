@@ -7,10 +7,11 @@
 
   &__back-button {
     font-size: 2rem;
-
-    &:hover {
-      cursor: pointer;
-      color: red;
+    @media screen and (min-width:1080px){
+      &:hover {
+        cursor: pointer;
+        color: red;
+      }
     }
   }
 
