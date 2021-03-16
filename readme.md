@@ -1,5 +1,5 @@
 # BLACKPINK Fan Page
-![image](https://user-images.githubusercontent.com/29835255/111126054-9d537800-85b5-11eb-97fd-f902e7fa467b.png)
+![screencapture-bbumjun-github-io-BLACKPINK-fan-page-dist-2021-03-16-11_18_09](https://user-images.githubusercontent.com/29835255/111246299-57e08a80-8649-11eb-835b-37ef47e80d90.png)
 
 ## Project stacks
 
