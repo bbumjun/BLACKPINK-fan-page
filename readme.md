@@ -1,5 +1,13 @@
-# 블랙핑크 팬 페이지
+# BLACKPINK Fan Page
+![screencapture-bbumjun-github-io-BLACKPINK-fan-page-dist-2021-03-16-11_18_09](https://user-images.githubusercontent.com/29835255/111246299-57e08a80-8649-11eb-835b-37ef47e80d90.png)
 
-Vanilla JS를 사용해 기존의 [블랙핑크 공식 홈페이지](https://www.ygfamily.com/artist/main.asp?LANGDIV=K&ATYPE=2&ARTIDX=70)를 세련되게 만들어 보자.
+## Project stacks
 
-- [Website Link](https://bbumjun.github.io/BLACKPINK-fan-page/dist/)
+### client
+- HTML5
+- SCSS
+- javascript
+- webpack
+
+### server
+- express
