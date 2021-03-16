@@ -404,9 +404,10 @@ a {
       margin: 0 auto; }
       .wrap #main-content .album-info__back-button {
         font-size: 2rem; }
-        .wrap #main-content .album-info__back-button:hover {
-          cursor: pointer;
-          color: red; }
+        @media screen and (min-width: 1080px) {
+          .wrap #main-content .album-info__back-button:hover {
+            cursor: pointer;
+            color: red; } }
       .wrap #main-content .album-info__detail {
         display: -webkit-box;
         display: -ms-flexbox;
