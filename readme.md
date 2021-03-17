@@ -11,3 +11,7 @@
 
 ### api server
 - express
+
+### hosting
+- github pages
+- heroku
